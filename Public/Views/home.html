@@ -1,0 +1,20 @@
+﻿<!-- Home.html
+	
+	The main landing page of the site
+	Contains a search bar in the center, 
+	         a list of popular searches,
+	         a list of user-chosen favorites,
+	         options to see all labs, tools, software, guides
+	-->
+
+<link href="../Styles/home.css" rel="stylesheet" />
+
+<div>
+	<form data-ng-submit="search()">
+		<input type="text"
+					 data-ng-model="searchInput" />
+		<input type="image" src="Images/search-icon-128.png" onclick="return true" />
+	</form>
+	
+</div>
+
