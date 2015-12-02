@@ -15,5 +15,26 @@
 <link href="../Styles/search.css" rel="stylesheet" />
 
 <div>
-	<h1>Search</h1>
+	<!--LEFT COLUMN-->
+	<div class="left-col">
+		<form data-ng-submit="search()">
+			<input type="text"
+						 data-ng-model="searchInput" />
+			<input type="image" src="Images/search-icon-128.png" width="20" height="20" onclick="return true" />
+		</form>
+
+		<div class="result-list">
+			<div class="result-list-item"
+					 data-ng-repeat="r in results"
+					 data-ng-style="{{getResTypeStyle(r)}}">
+				<div class="result-list-item-title">{{r.title}}</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!--RIGTH COLUMN-->
+	<div class="right-column">
+
+	</div>
 </div>

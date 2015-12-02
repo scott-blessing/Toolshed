@@ -5,7 +5,7 @@
       	templateUrl: 'Views/home.html',
       	controller: 'HomeCtrl'
       })
-			.when('/search', {
+			.when('/search/:query', {
 				templateUrl: 'Views/search.html',
 				controller: 'SearchCtrl'
 			})

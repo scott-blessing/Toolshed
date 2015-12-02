@@ -1,5 +1,5 @@
 ﻿angular.module('toolshedApp')
-	.controller('HomeCtrl', ['$scope', 'UserService', function ($scope, UserService) {
+	.controller('HomeCtrl', ['$scope', '$location', 'UserService', function ($scope, $location, UserService) {
 
 		//Page Load
 		$scope.searchInput = '';
@@ -8,7 +8,7 @@
 		//Events
 
 		$scope.search = function () {
-			$scope.searchInput += "test";
+			$location.path('search/' + $scope.searchInput);
 		};
 
 	}]);
