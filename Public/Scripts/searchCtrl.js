@@ -4,30 +4,38 @@
 		/////////////////Page Load//////////////////
 		
 		$scope.searchInput = $routeParams.query;
-		$scope.results = [];
+		$scope.results_labs = [];
+		$scope.results_tools = [];
+		$scope.results_software = [];
+		$scope.results_guides = [];
+
+		$scope.popularSearches = DataService.popular;
+		$scope.favorites = [];
 
 		//Load search results
-		$scope.results = DataService.data;
+		$scope.results_labs = DataService.labs;
+		$scope.results_tools = DataService.tools;
+		$scope.results_software = DataService.software;
+		$scope.results_guides = DataService.guides;
 		//TODO: Filter on search input
 		//TODO: Special cases for all labs, all tools, all guides, etc.
 
 
+		$scope.loggedIn = function () {
+			return UserService.username !== "";
+		};
+
+		if ($scope.loggedIn()) {
+			$scope.favorites = UserService.favorites;
+		}
 
 		///////////////////////Events/////////////////////
 		$scope.search = function () {
 			$location.path('search/' + $scope.searchInput);
 		};
 
-		$scope.getResTypeStyle = function (resItem) {
-			if (resItem.type === DataService.type.LAB)
-				return "{'background-color': 'red'}";
-			if (resItem.type === DataService.type.TOOL)
-				return "{'background-color': 'blue'}";
-			if (resItem.type === DataService.type.SOFTWARE)
-				return "{'background-color': 'green'}";
-			if (resItem.type === DataService.type.GUIDE)
-				return "{'background-color': 'purple'}";
-			return "{'background-color': 'white'}";
+		$scope.searchFor = function (query) {
+			$location.path('search/' + query);
 		};
 
 	}]);

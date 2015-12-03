@@ -1,6 +1,7 @@
 ﻿angular.module('toolshedApp')
 	.factory('UserService', function () {
 		return {
-			username: ''
+			username: '',
+			favorites: ['Everett', 'MatLab']
 		};
 	});

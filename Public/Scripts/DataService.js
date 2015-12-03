@@ -1,29 +1,22 @@
 ﻿angular.module('toolshedApp')
 	.factory('DataService', function () {
 		return {
-			data: [
+			labs: [
 				{
-					title: "Siebel Center",
-					type: 'lab'
-				},
+					title: "Siebel Center"
+				}],
+			tools: [
 				{
 					title: "3D Printer",
-					type: 'tool'
-				},
+				}],
+			software: [
 				{
 					title: "AutoCAD 3D",
-					type: 'soft'
-				},
+				}],
+			guides: [
 				{
 					title: "3D Printing for Dmbasses",
-					type: 'guide'
-				}
-			],
-			type: {
-				LAB: 'lab',
-				TOOL: 'tool',
-				SOFTWARE: 'soft',
-				GUIDE: 'guide'
-			}
+				}],
+			popular: ['3D Printer', 'Siebel Center', 'Fab Lab']
 		};
 	});
