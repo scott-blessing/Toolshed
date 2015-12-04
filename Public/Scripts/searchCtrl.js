@@ -21,6 +21,10 @@
 		//TODO: Special cases for all labs, all tools, all guides, etc.
 
 
+		$scope.curSelectedResult = $scope.results_labs[0];
+		//TODO: Select best match
+		//TODO: Account for all empty arrays
+
 		$scope.loggedIn = function () {
 			return UserService.username !== "";
 		};

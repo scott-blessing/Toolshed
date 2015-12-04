@@ -25,9 +25,13 @@
 
 		<!--Header-->
 		<div id="header" data-ng-controller="HeaderCtrl">
-			<div class="large-text">Toolshed</div>
+			<div class="logo" data-ng-click="returnHome()">
+				<!--TODO: Get Icon-->
+				<div class="large-text">Toolshed</div>
+			</div>
 			<div data-ng-show="loggedIn()"
 					 class="right">
+				<a data-ng-click="reportIssue()">Report Issue</a>
 				<a>{{username}}</a>
 				<a data-ng-click="logout()">Logout</a>
 			</div>

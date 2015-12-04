@@ -1,5 +1,5 @@
 ﻿angular.module('toolshedApp')
-	.controller('HomeCtrl', ['$scope', '$location', 'UserService', function ($scope, $location, UserService) {
+	.controller('HomeCtrl', ['$scope', '$location', 'UserService', 'DataService', function ($scope, $location, UserService, DataService) {
 
 		//Page Load
 		$scope.searchInput = '';
