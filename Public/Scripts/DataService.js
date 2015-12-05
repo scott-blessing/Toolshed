@@ -8,7 +8,7 @@
 				title: "Siebel Center",
 				location: "201 N Goodwin Ave, Urbana IL 61801",
 				labs: ["0403", "0221", "0220", "0222", "0225"],
-				tools: ["3D Printer", "AutoCAD 3D"],
+				tools: ["3D Printer", "AutoCAD 3D","Matlab"],
 				comments: [
 					{
 						user: "abjrekn2",
@@ -21,16 +21,93 @@
 						body: "I stepped in gum so I blame the building"
 					}
 				]
+			},
+			{
+				title: "ECE Building",
+				location: "306 N Wright St, Urbana, IL 61801",
+				labs:["2001","0101","0202","0420"],
+				tools:["3D Printer","Oscilloscope"],
+				comments: [
+				{
+						user: "abjrekn2",
+						rating: 3.7,
+						body: "Siebel is the best"
+					},
+					{
+						user: "uyeouiu3",
+						rating: 2.1,
+						body: "ECE > Siebel"
+					}
+
+				]
+			},
+			{
+				title: "Digital Computer Laboratory",
+				location: "1304 W. Springfield, Urbana, IL 61801",
+				labs:["2201","0201","0203","0420"],
+				tools:["Matlab"],
+				comments: [
+				{
+						user: "abjrekn2",
+						rating: 3.7,
+						body: "DCL sux"
+					},
+					{
+						user: "uyeouiu3",
+						rating: 2.1,
+						body: "ECE For Lyf"
+					}
+
+				]
+			},
+			{
+				title: "Fab Labs",
+				location: "1301 S Goodwin Ave, Urbana, IL 61801",
+				labs:["Fab Labs"],
+				tools:["3D Printer","Sewing Machine","Laser Printer"],
+				comments: [
+				{
+						user: "abjrekn2",
+						rating: 3.7,
+						body: "DCL sux"
+					},
+					{
+						user: "uyeouiu3",
+						rating: 2.1,
+						body: "ECE For Lyf"
+					}
+
+				]
 			}
+
 		];
 
 		factory.tools = [
+			{
+				title: "Oscilloscope",
+				desc: "Measures wave frequencies",
+				labs: ["Siebel Center","ECE Building"],
+				guides: []
+			},
 			{
 				title: "3D Printer",
 				desc: "A printer that prints in 3D using the latest molten plastic technology",
 				labs: ["Siebel Center"],
 				guides: ["3D Printing for Dummies"]
+			},
+			{
+				title: "Sweing Machine",
+				desc: "Ask your mom",
+				labs: ["Fab Labs"],
+				guides: ["Yo Moma's guide to Sewing"]
+			},
+			{
+				title: "Laser Printer",
+				desc: "Not for children",
+				labs: ["Fab Labs"],
+				guides: ["Laser Tag for Adult"]
 			}
+
 		];
 
 		factory.software = [
@@ -38,6 +115,12 @@
 				title: "AutoCAD 3D",
 				desc: "3D modeling software commonly used in Architectural and Mechanical engineering contexts",
 				labs: ["Siebel Center"],
+				guides: []
+			},
+			{
+				title: "Digital Computer Laboratory",
+				desc: "Heisenberg was here",
+				labs: ["Siebel Center","DCL"],
 				guides: []
 			}
 		];
@@ -51,16 +134,53 @@
 				comments: [
 					{
 						user: "gglolgtg3",
-						rating: 4.9,
+						rating: 4,
 						body: "Best 3D printing tutorial on the internet by far"
 					},
 					{
 						user: "mmojrpg1",
-						rating: 3.6,
+						rating: 3,
 						body: "My girlfriend broke up with me while I was reading this."
 					}
 				]
+			},
+			{
+				title: "Yo Moma's guide to Sewing",
+				submitUser: "blessin2",
+				submitDate: new Date(2015, 8, 11),
+				url: "https://http://www.amazon.com/Sewing-For-Dummies-Saunders-Maresh/dp/0470623209",
+				comments: [
+					{
+						user: "gglolgtg3",
+						rating: 4,
+						body: "Good stuff"
+					},
+					{
+						user: "mmojrpg1",
+						rating: 3,
+						body: "Real good"
+					}
+				]
+			},
+			{
+				title: "Laser Tag for Adult",
+				submitUser: "blessin2",
+				submitDate: new Date(2015, 8, 11),
+				url: "https://s-media-cache-ak0.pinimg.com/236x/b1/81/ff/b181ffe4a1cc4a011599444fbd94ae59.jpg",
+				comments: [
+					{
+						user: "gglolgtg3",
+						rating: 4,
+						body: "Good stuff"
+					},
+					{
+						user: "mmojrpg1",
+						rating: 3,
+						body: "Real good"
+					}
+				]
 			}
+
 		];
 
 		factory.type = {
