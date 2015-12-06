@@ -3,6 +3,14 @@
 
 		/////////////////Page Load//////////////////
 		
+		$scope.types = DataService.type;
+		$scope.sortMethods = {
+			PROX: 'Proximity',
+			RATING: 'Rating'
+		};
+
+		$scope.sortMethod = $scope.sortMethods.PROX;
+
 		$scope.searchInput = $routeParams.query;
 		$scope.results_labs = [];
 		$scope.results_tools = [];
@@ -40,6 +48,41 @@
 
 		$scope.searchFor = function (query) {
 			$location.path('search/' + query);
+		};
+
+		$scope.resultType = function (res) {
+			return DataService.getType(res);
+		};
+
+		$scope.select = function (res) {
+			$scope.curSelectedResult = res;
+			$scope.sortMethod = $scope.sortMethods.PROX;
+		};
+
+		$scope.getSortedCurToolLocations = function () {
+			return [{
+				title: "Siebel Center",
+				sortValue: 4,
+				sortValueText: "4 miles"
+			},
+			{
+				title: "Fab Lab",
+				sortValue: 7,
+				sortValueText: "7 miles"
+			}];
+		};
+
+		$scope.getSortedCurSoftwareLocations = function () {
+			return [{
+				title: "Siebel Center",
+				sortValue: 4,
+				sortValueText: "4 miles"
+			},
+			{
+				title: "Fab Lab",
+				sortValue: 7,
+				sortValueText: "7 miles"
+			}];
 		};
 
 	}]);

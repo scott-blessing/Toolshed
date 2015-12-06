@@ -12,12 +12,12 @@
 				comments: [
 					{
 						user: "abjrekn2",
-						rating: 3.7,
+						rating: 4,
 						body: "Siebel is the best"
 					},
 					{
 						user: "uyeouiu3",
-						rating: 2.1,
+						rating: 2,
 						body: "I stepped in gum so I blame the building"
 					}
 				]
@@ -51,12 +51,12 @@
 				comments: [
 					{
 						user: "gglolgtg3",
-						rating: 4.9,
+						rating: 5,
 						body: "Best 3D printing tutorial on the internet by far"
 					},
 					{
 						user: "mmojrpg1",
-						rating: 3.6,
+						rating: 3,
 						body: "My girlfriend broke up with me while I was reading this."
 					}
 				]
