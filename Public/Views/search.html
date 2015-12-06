@@ -26,25 +26,29 @@
 		<div class="result-list">
 			<div class="result-list-labs">
 					 <div class="result-list-lab-item"
-					      data-ng-repeat="r in results_labs">
+					      data-ng-repeat="r in results_labs"
+								data-ng-click="select(r)">
 							<div class="result-list-item-title">{{r.title}}</div>
 					</div>
 			</div>
 			<div class="result-list-tools">
 				<div class="result-list-tool-item"
-						 data-ng-repeat="r in results_tools">
+						 data-ng-repeat="r in results_tools"
+						 data-ng-click="select(r)">
 					<div class="result-list-item-title">{{r.title}}</div>
 				</div>
 			</div>
 			<div class="result-list-software">
 				<div class="result-list-software-item"
-						 data-ng-repeat="r in results_software">
+						 data-ng-repeat="r in results_software"
+						 data-ng-click="select(r)">
 					<div class="result-list-item-title">{{r.title}}</div>
 				</div>
 			</div>
 			<div class="result-list-labs">
 				<div class="result-list-lab-item"
-						 data-ng-repeat="r in results_guides">
+						 data-ng-repeat="r in results_guides"
+						 data-ng-click="select(r)">
 					<div class="result-list-item-title">{{r.title}}</div>
 				</div>
 			</div>
@@ -75,8 +79,175 @@
 
 	</div>
 
-	<!--RIGTH COLUMN-->
+	<!--RIGHT COLUMN-->
 	<div class="right-column">
+
+		<!--LAB INFO PANEL-->
+		<div class="info-panel info-panel-lab"
+				 data-ng-if="resultType(curSelectedResult) === types.LAB">
+			<div class="info-panel-header">
+				<!--TODO: Lab icon-->
+				<div class="info-panel-title">{{curSelectedResult.title}}</div>
+				<!--TODO: Favorite toggle star-->
+			</div>
+			<div class="info-panel-desc">{{curSelectedResult.location}}</div>
+			<div class="info-panel-container">
+				<!--TODO: Implement Google Map-->
+				<div class="info-panel-map">[MAP GOES HERE]</div>
+			</div>
+			<div class="info-panel-container">
+				<div class="info-panel-subtitle">Labs</div>
+				<div class="info-panel-lab-entry"
+						 data-ng-repeat="labName in curSelectedResult.labs">
+					{{labName}}
+				</div>
+			</div>
+			<div class="info-panel-container">
+				<div class="info-panel-subtitle">Tools and Software</div>
+				<div class="info-panel-tool-entry"
+						 data-ng-repeat="toolName in curSelectedResult.tools"
+						 data-ng-click="searchFor(toolName)">
+					{{toolName}}
+				</div>
+			</div>
+			<div class="info-panel-container">
+				<div class="info-panel-subtitle">Comments</div>
+				<div class="info-panel-comment-submit">
+					<!--TODO: Comment Submission-->
+				</div>
+				<div class="info-panel-comment-list">
+					<div class="info-panel-comment-container"
+							 data-ng-repeat="com in curSelectedResult.comments">
+						<div class="comment-user">{{com.user}}</div>
+						<div class="comment-rating">Rating: {{com.rating}}</div>
+						<div class="comment-body">{{com.body}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Tool Info Panel-->
+		<div class="info-panel info-panel-tool"
+				 data-ng-if="resultType(curSelectedResult) === types.TOOL">
+			<div class="info-panel-header">
+				<!--TODO: Tool icon-->
+				<div class="info-panel-title">{{curSelectedResult.title}}</div>
+				<!--TODO: Favorite toggle star-->
+			</div>
+			<div class="info-panel-desc">{{curSelectedResult.desc}}</div>
+			<div class="info-panel-container">
+				<!--TODO: Map-->
+				<div class="info-panel-lab-list">
+					<!--TODO: Lab sorting DDL-->
+					<table class="info-panel-lab-table">
+						<thead>
+							<tr>
+								<td>Location</td>
+								<td>Sorting Category</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr data-ng-repeat="loc in getSortedCurToolLocations()">
+								<td>
+									{{loc.title}}
+								</td>
+								<td>
+									{{loc.sortValueText}}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="info-panel-container">
+				<div class="info-panel-subtitle">Guides</div>
+				<div class="info-panel-guide-list">
+					<div class="info-panel-guide-entry"
+							 data-ng-repeat="g in curSelectedResult.guides"
+							 data-ng-click="searchFor(g)">
+						<div class="guide-title">{{g}}</div>
+						<!--TODO: Display guide ratings-->
+					</div>
+				</div>
+			</div>
+		</div> 
+
+		<!--Software Info Panel-->
+		<div class="info-panel info-panel-software"
+				 data-ng-if="resultType(curSelectedResult) === types.SOFTWARE">
+			<div class="info-panel-header">
+				<!--TODO: Software icon-->
+				<div class="info-panel-title">{{curSelectedResult.title}}</div>
+				<!--TODO: Favorite toggle star-->
+			</div>
+			<div class="info-panel-desc">{{curSelectedResult.desc}}</div>
+			<div class="info-panel-container">
+				<!--TODO: Map-->
+				<div class="info-panel-lab-list">
+					<!--TODO: Lab sorting DDL-->
+					<table class="info-panel-lab-table">
+						<thead>
+							<tr>
+								<td>Location</td>
+								<td>Sorting Category</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr data-ng-repeat="loc in getSortedCurSofwareLocations()">
+								<td>
+									{{loc.title}}
+								</td>
+								<td>
+									{{loc.sortValueText}}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="info-panel-container">
+				<div class="info-panel-subtitle">Guides</div>
+				<div class="info-panel-guide-list">
+					<div class="info-panel-guide-entry"
+							 data-ng-repeat="g in curSelectedResult.guides"
+							 data-ng-click="searchFor(g)">
+						<div class="guide-title">{{g}}</div>
+						<!--TODO: Display guide ratings-->
+					</div>
+				</div>
+			</div>
+		</div> 
+
+
+		<!--Guide Info Panel-->
+		<div class="info-panel info-panel-guide"
+				 data-ng-if="resultType(curSelectedResult) === types.GUIDE">
+			<div class="info-panel-header">
+				<!--TODO: Guide icon-->
+				<div class="info-panel-title">{{curSelectedResult.title}}</div>
+				<!--TODO: Favorite toggle star-->
+			</div>
+			<div class="info-panel-desc">Submitted by {{curSelectedResult.submitUser}} on {{curSelectedResult.submitDate.toDateString()}}</div>
+			<div class="info-panel-guide-link-container">
+				<a>URL: </a>
+				<a class="guide-url"
+					 data-ng-href="{{curSelectedResult.url}}">{{curSelectedResult.url}}</a>
+			</div>
+			<div class="info-panel-container">
+				<div class="info-panel-subtitle">Comments</div>
+				<div class="info-panel-comment-submit">
+					<!--TODO: Comment Submission-->
+				</div>
+				<div class="info-panel-comment-list">
+					<div class="info-panel-comment-container"
+							 data-ng-repeat="com in curSelectedResult.comments">
+						<div class="comment-user">{{com.user}}</div>
+						<div class="comment-rating">Rating: {{com.rating}}</div>
+						<div class="comment-body">{{com.body}}</div>
+					</div>
+				</div>
+			</div>
+		</div> 
 
 	</div>
 </div>

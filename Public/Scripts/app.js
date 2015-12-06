@@ -9,6 +9,14 @@
 				templateUrl: 'Views/search.html',
 				controller: 'SearchCtrl'
 			})
+			.when('/report', {
+				templateUrl: 'Views/report.html',
+				controller: 'ReportCtrl'
+			})
+			.when('/guide', {
+				templateUrl: 'Views/guide.html',
+				controller: 'GuideCtrl'
+			})
       .otherwise({
       	redirectTo: '/'
       })

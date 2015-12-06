@@ -12,12 +12,12 @@
 				comments: [
 					{
 						user: "abjrekn2",
-						rating: 3.7,
+						rating: 4,
 						body: "Siebel is the best"
 					},
 					{
 						user: "uyeouiu3",
-						rating: 2.1,
+						rating: 2,
 						body: "I stepped in gum so I blame the building"
 					}
 				]
@@ -30,12 +30,12 @@
 				comments: [
 				{
 						user: "abjrekn2",
-						rating: 3.7,
+						rating: 4,
 						body: "Siebel is the best"
 					},
 					{
 						user: "uyeouiu3",
-						rating: 2.1,
+						rating: 2,
 						body: "ECE > Siebel"
 					}
 
@@ -49,12 +49,12 @@
 				comments: [
 				{
 						user: "abjrekn2",
-						rating: 3.7,
+						rating: 3,
 						body: "DCL sux"
 					},
 					{
 						user: "uyeouiu3",
-						rating: 2.1,
+						rating: 2,
 						body: "ECE For Lyf"
 					}
 
@@ -68,12 +68,12 @@
 				comments: [
 				{
 						user: "abjrekn2",
-						rating: 3.7,
+						rating: 5,
 						body: "DCL sux"
 					},
 					{
 						user: "uyeouiu3",
-						rating: 2.1,
+						rating: 1,
 						body: "ECE For Lyf"
 					}
 
@@ -134,7 +134,7 @@
 				comments: [
 					{
 						user: "gglolgtg3",
-						rating: 4,
+						rating: 5,
 						body: "Best 3D printing tutorial on the internet by far"
 					},
 					{
