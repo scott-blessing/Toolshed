@@ -1,0 +1,42 @@
+﻿<!-- Home.html
+	
+	The main landing page of the site
+	Contains a search bar in the center, 
+	         a list of popular searches,
+	         a list of user-chosen favorites,
+	         options to see all labs, tools, software, guides
+	-->
+
+<link href="../Public/Styles/home.css" rel="stylesheet" />
+
+<div>
+	<form data-ng-submit="search()">
+		<input type="text"
+					 data-ng-model="searchInput" />
+		<input type="image" src="Images/search-icon-128.png" width="20" height="20" onclick="return true" />
+	</form>
+	
+	<div class="popular-list">
+		<div class="popular-header">Popular Searches</div>
+		<ul>
+			<li class="popular-item"
+					data-ng-repeat="p in popularSearches"
+					data-ng-click="searchFor(p)">
+				{{p}}
+			</li>
+		</ul>
+	</div>
+
+	<div class="favorite-list"
+			 data-ng-if="loggedIn()">
+		<div class="favorite-header">Favorites</div>
+		<ul>
+			<li class="favorite-item"
+					data-ng-repeat="f in favorites"
+					data-ng-click="searchFor(f)">
+				{{f}}
+			</li>
+		</ul>
+	</div>
+</div>
+

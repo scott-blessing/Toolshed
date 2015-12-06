@@ -1,0 +1,82 @@
+﻿<!-- Search.html
+	
+	The main search page for the site
+	Displays a search bar and result list down the left column
+	Below this there is a section of favorites and popular searches
+
+	The right column contains the results from clicking on a search
+	This "information panel" will be color-coded to match its result type
+	The info panel will contain different information based on the type of result chosen (tool/software, lab, guide)
+
+	By default, when the page loads the first result in the list will be opened in the info panel
+	If the results list is empty, display a message instead indicating that no results were obtained
+	-->
+
+<link href="../Public/Styles/search.css" rel="stylesheet" />
+
+<div>
+	<!--LEFT COLUMN-->
+	<div class="left-col">
+		<form data-ng-submit="search()">
+			<input type="text"
+						 data-ng-model="searchInput" />
+			<input type="image" src="Images/search-icon-128.png" width="20" height="20" onclick="return true" />
+		</form>
+
+		<div class="result-list">
+			<div class="result-list-labs">
+					 <div class="result-list-lab-item"
+					      data-ng-repeat="r in results_labs">
+							<div class="result-list-item-title">{{r.title}}</div>
+					</div>
+			</div>
+			<div class="result-list-tools">
+				<div class="result-list-tool-item"
+						 data-ng-repeat="r in results_tools">
+					<div class="result-list-item-title">{{r.title}}</div>
+				</div>
+			</div>
+			<div class="result-list-software">
+				<div class="result-list-software-item"
+						 data-ng-repeat="r in results_software">
+					<div class="result-list-item-title">{{r.title}}</div>
+				</div>
+			</div>
+			<div class="result-list-labs">
+				<div class="result-list-lab-item"
+						 data-ng-repeat="r in results_guides">
+					<div class="result-list-item-title">{{r.title}}</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="popular-list">
+			<div class="popular-header">Popular Searches</div>
+			<ul>
+				<li class="popular-item"
+						 data-ng-repeat="p in popularSearches"
+						 data-ng-click="searchFor(p)">
+					{{p}}
+				</li>
+			</ul>
+		</div>
+
+		<div class="favorite-list"
+				 data-ng-if="loggedIn()">
+			<div class="favorite-header">Favorites</div>
+			<ul>
+				<li class="favorite-item"
+						data-ng-repeat="f in favorites"
+						data-ng-click="searchFor(f)">
+					{{f}}
+				</li>
+			</ul>
+		</div>
+
+	</div>
+
+	<!--RIGTH COLUMN-->
+	<div class="right-column">
+
+	</div>
+</div>

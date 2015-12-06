@@ -14,29 +14,22 @@ body {
 }
 
 .logo {
-    padding-top: 100px;
     display: block;
 }
 
 .large-text {
-    text-align: center;
-	color: #ffffff;
-    font-size: 26px;
-	font-family: bebas-neue, sans-serif;
-    font-weight: 400;
-    margin-left: 15px;
+    text-align: left;
+    margin-left: 5px;
     margin-right: 8px;
-    border-width: 15px;
-    border-top:10px;
+    width: 40%;
+    
 }
 
 #login {
-    width: 145px;
     border-width: 5px;
 	border-style: solid;
 	border-color: #1CB7D5;
 	background-color: transparent;
-    line-width: 46px;
 	line-height: 46px;
 	color: #1CB7D5;
 	text-align: center;
@@ -54,6 +47,8 @@ body {
 	visibility: inherit;
 }
 
+
+}
 
 #header div {
 	display: inline;
