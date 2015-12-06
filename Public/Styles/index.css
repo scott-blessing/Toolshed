@@ -19,17 +19,14 @@ body {
 }
 
 .large-text {
-
-
     text-align: center;
-    color: #ffffff;
+    color: silver;
     font-size: 26px;
     font-family: bebas-neue, sans-serif;
     font-weight: 400;
-    margin-left: 15px;
-    margin-right: 8px;
-    border-width: 15px;
-    border-top:10px;
+    position: absolute;
+    left: 20px;
+    top: 15px;
 }
 
 #login {
@@ -39,7 +36,7 @@ body {
     border-color: #1CB7D5;
     background-color: transparent;
     line-width: 46px;
-    line-height: 46px;
+    line-height: 51px;
     color: #1CB7D5;
     text-align: center;
     font-size: 26px;
