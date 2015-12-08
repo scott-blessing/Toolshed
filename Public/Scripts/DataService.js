@@ -96,7 +96,7 @@
 				guides: ["3D Printing for Dummies"]
 			},
 			{
-				title: "Sweing Machine",
+				title: "Sewing Machine",
 				desc: "Ask your mom",
 				labs: ["Fab Labs"],
 				guides: ["Yo Moma's guide to Sewing"]
