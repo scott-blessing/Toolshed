@@ -20,12 +20,14 @@
 
 		<form data-ng-submit="search()">
 
- 	<input type="search" ng-model="searchInput" placeholder="Find your Tool" />
+ 	<input type="search" id = "bar" ng-model="searchInput" placeholder="Find your Tool" />
 
  			<input type="image" src="Images/search-icon-128.png" width="20" height="20" onclick="return true" />
 		</form>
 
 		<div class="result-list">
+		<div class="result-header">Search Results</div>
+		<ul>
 			<div class="result-list-labs">
 					 <div class="result-list-lab-item"
 					      data-ng-repeat="r in results_labs"
@@ -54,6 +56,7 @@
 					<div class="result-list-item-title">{{r.title}}</div>
 				</div>
 			</div>
+			</ul>
 		</div>
 
 		<div class="popular-list">
@@ -92,11 +95,12 @@
 				<div class="info-panel-title">{{curSelectedResult.title}}</div>
 				<!--TODO: Favorite toggle star-->
 			</div>
-			<div class="info-panel-desc">{{curSelectedResult.location}}</div>
 			<div class="info-panel-container">
 				<!--TODO: Implement Google Map-->
-				<div class="info-panel-map">[MAP GOES HERE]</div>
+				<div class="info-panel-map"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12203.756918782326!2d-88.2169016!3d40.12135775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1449545834376" width="900" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
 			</div>
+						<div class="info-panel-desc">{{curSelectedResult.location}}</div>
+
 			<div class="info-panel-container">
 				<div class="info-panel-subtitle">Labs</div>
 				<div class="info-panel-lab-entry"
