@@ -78,7 +78,11 @@ body {
     height: 50px;
     width: 100%;
 }
-
+.text-center
+{
+    position: absolute;;
+    bottom: 0px;    
+}
 #fullPage {
     min-height: 100%;
 }

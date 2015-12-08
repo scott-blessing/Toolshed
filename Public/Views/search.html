@@ -17,10 +17,12 @@
 <div>
 	<!--LEFT COLUMN-->
 	<div class="left-col">
+
 		<form data-ng-submit="search()">
-			<input type="text"
-						 data-ng-model="searchInput" />
-			<input type="image" src="Images/search-icon-128.png" width="20" height="20" onclick="return true" />
+
+ 	<input type="search" ng-model="searchInput" placeholder="Find your Tool" />
+
+ 			<input type="image" src="Images/search-icon-128.png" width="20" height="20" onclick="return true" />
 		</form>
 
 		<div class="result-list">
