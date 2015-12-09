@@ -1,1 +1,15 @@
-﻿
+﻿.popular-header
+{
+    padding-left: 14px;
+    font-family: bebas-neue, sans-serif;
+    color: #464646;
+    font-size: 34px;
+
+}
+
+.popular-list
+{
+    padding-bottom:15px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 6px -6px #777;
+}
