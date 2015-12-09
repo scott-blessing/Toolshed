@@ -29,7 +29,7 @@ If the results list is empty, display a message instead indicating that no resul
             <div class="result-header">Search Results</div>
             <ul>
                 <div class="result-list-labs">
-                    <div class="result-list-lab-item"
+                    <div class="result-list-item result-list-lab-item" 
                          data-ng-repeat="r in results_labs"
                          data-ng-click="select(r)">
 												<img src="Images/lab.png" width="24" height="24"/>
@@ -38,31 +38,31 @@ If the results list is empty, display a message instead indicating that no resul
                     </div>
                 </div>
                 <div class="result-list-tools">
-                    <div class="result-list-tool-item"
-                         data-ng-repeat="r in results_tools"
-                         data-ng-click="select(r)">
-												<img src="Images/tool.png" width="24" height="24" />
-												<div class="result-list-item-title"
-													 data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
-                    </div>
+									<div class="result-list-item result-list-tool-item"
+											 data-ng-repeat="r in results_tools"
+											 data-ng-click="select(r)">
+										<img src="Images/tool.png" width="24" height="24" />
+										<div class="result-list-item-title"
+												 data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
+									</div>
                 </div>
                 <div class="result-list-software">
-                    <div class="result-list-software-item"
-                         data-ng-repeat="r in results_software"
-                         data-ng-click="select(r)">
-												<img src="Images/software.png" width="24" height="24" />
-											<div class="result-list-item-title"
-													 data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
-                    </div>
+									<div class="result-list-item result-list-software-item"
+											 data-ng-repeat="r in results_software"
+											 data-ng-click="select(r)">
+										<img src="Images/software.png" width="24" height="24" />
+										<div class="result-list-item-title"
+												 data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
+									</div>
                 </div>
                 <div class="result-list-labs">
-                    <div class="result-list-lab-item"
-                         data-ng-repeat="r in results_guides"
-                         data-ng-click="select(r)">
-												<img src="Images/guide.png" width="24" height="24" />
-											<div class="result-list-item-title"
-													 data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
-                    </div>
+									<div class="result-list-item result-list-lab-item"
+											 data-ng-repeat="r in results_guides"
+											 data-ng-click="select(r)">
+										<img src="Images/guide.png" width="24" height="24" />
+										<div class="result-list-item-title"
+												 data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
+									</div>
                 </div>
             </ul>
         </div>
@@ -201,9 +201,9 @@ If the results list is empty, display a message instead indicating that no resul
                         </thead>
                         <tbody>
                             <tr data-ng-repeat="loc in getSortedCurToolLocations(sortMethod)">
-                                <td>
-                                    {{loc.title}}
-                                </td>
+															<td class="clickable" data-ng-click="searchFor(loc.title)">
+																{{loc.title}}
+															</td>
                                 <td>
                                     {{loc.sortValueText}}
                                 </td>
@@ -261,14 +261,14 @@ If the results list is empty, display a message instead indicating that no resul
                             </tr>
                         </thead>
                         <tbody>
-                            <tr data-ng-repeat="loc in getSortedCurToolLocations(sortMethod)">
-                                <td>
-                                    {{loc.title}}
-                                </td>
-                                <td>
-                                    {{loc.sortValueText}}
-                                </td>
-                            </tr>
+													<tr data-ng-repeat="loc in getSortedCurToolLocations(sortMethod)">
+														<td class="clickable" data-ng-click="searchFor(loc.title)">
+															{{loc.title}}
+														</td>
+														<td>
+															{{loc.sortValueText}}
+														</td>
+													</tr>
                         </tbody>
                     </table>
                 </div>
@@ -314,7 +314,9 @@ If the results list is empty, display a message instead indicating that no resul
 							<img src="Images/star_full.png" width="12" height="12" />
 							{{getRatingText(curSelectedResult)}}
 						</div>
-            <div class="info-panel-guide-link-container">
+						<div class="info-panel-guide-text"
+								 data-ng-click="searchFor(curSelectedResult.tool)">Guide for: {{curSelectedResult.tool}}</div>
+            <div class="info-panel-url">
                 <a>URL: </a>
                 <a class="guide-url"
                    data-ng-href="{{curSelectedResult.url}}">{{curSelectedResult.url}}</a>

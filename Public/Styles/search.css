@@ -211,3 +211,40 @@ body {
 .comment-rating {
   padding-left: 90px;
 }
+
+.guide-title {
+    float: left;
+}
+.info-panel-guide-entry {
+    background-color: #aaaaaa;
+    padding: 4px;
+    height: 22px;
+    margin: 5px;
+}
+.guide-link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.guide-link {
+    color: blue;
+}
+.guide-rating {
+    float: right;
+}
+
+.result-list-item img {
+  float: left;
+}
+
+.result-list-item-title {
+    margin-left: 35px;
+    padding-top: 3px;
+}
+
+.result-list-item {
+    padding-bottom: 10px;
+}
+
+.clickable:hover {
+	cursor: pointer;
+}

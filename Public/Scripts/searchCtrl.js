@@ -14,7 +14,10 @@
 		};
 
 		$scope.searchFor = function (query) {
-			$location.path('search/' + query);
+			if (query === $scope.searchInput)
+				filterResults();
+			else
+				$location.path('search/' + query);
 		};
 
 		$scope.resultType = function (res) {

@@ -97,7 +97,7 @@
 				title: "3D Printer",
 				desc: "A printer that prints in 3D using the latest molten plastic technology",
 				labs: ["Siebel Center"],
-				guides: ["3D Printing for Dummies"]
+				guides: ["3D Printing for Dummies", "Advanced 3D Printing Techniques"]
 			},
 			{
 				title: "Sewing Machine",
@@ -184,6 +184,25 @@
 						user: "mmojrpg1",
 						rating: 3,
 						body: "Real good"
+					}
+				]
+			},
+			{
+				title: "Advanced 3D Printing Techniques",
+				submitUser: "blessin2",
+				submitDate: new Date(2015, 8, 11),
+				tool: "3D Printer",
+				url: "https://s-media-cache-ak0.pinimg.com/236x/b1/81/ff/b181ffe4a1cc4a011599444fbd94ae59.jpg",
+				comments: [
+					{
+						user: "gglolgtg3",
+						rating: 1,
+						body: "Pure drivel - nothing about this guide is advanced"
+					},
+					{
+						user: "mmojrpg1",
+						rating: 2,
+						body: "Incredibly pretentious sounding narrator"
 					}
 				]
 			}
