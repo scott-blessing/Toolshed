@@ -24,6 +24,10 @@
 		$scope.select = function (res) {
 			$scope.curSelectedResult = res;
 			$scope.sortMethod = $scope.sortMethods.PROX;
+			$scope.commentForm = {
+				body: "",
+				rating: 3
+			};
 
 			if (DataService.getType(res) === DataService.type.LAB) {
 				geocoder = new google.maps.Geocoder();
@@ -175,6 +179,27 @@
 			return $scope.getRatingText(DataService.getLab(labName));
 		};
 
+		$scope.submitComment = function () {
+			if ($scope.commentForm.body === "")
+				return;
+
+			var type = DataService.getType($scope.curSelectedResult);
+			var comment = {
+				user: UserService.username,
+				rating: $scope.commentForm.rating,
+				body: $scope.commentForm.body
+			};
+			if (type === DataService.type.LAB) {
+				DataService.getLab($scope.curSelectedResult.title).comments.push(comment);
+			} else if (type === DataService.type.GUIDE) {
+				DataService.getGuide($scope.curSelectedResult.title).comments.push(comment);
+			}
+			$scope.commentForm = {
+				body: "",
+				rating: 3
+			};
+		};
+
 		//////////////////////////////////
 
 		$scope.types = DataService.type;
@@ -189,6 +214,11 @@
 
 		$scope.popularSearches = DataService.popular;
 		$scope.favorites = UserService.favorites;
+
+		$scope.commentForm = {
+			body: "",
+			rating: 3
+		};
 
 		//Load search results
 		$scope.results_labs = DataService.labs;

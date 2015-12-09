@@ -139,7 +139,22 @@ If the results list is empty, display a message instead indicating that no resul
             <div class="info-panel-container">
                 <div class="info-panel-subtitle">Comments</div>
                 <div class="info-panel-comment-submit">
-                    <!--TODO: Comment Submission-->
+									<form>
+										<textarea data-ng-model="commentForm.body"></textarea>
+										<div class="starbar">
+											<img data-ng-src="Images/star_{{commentForm.rating >= 1 ? 'full' : 'hollow'}}.png" width="12" height="12"
+													 data-ng-click="commentForm.rating = 1" />
+											<img data-ng-src="Images/star_{{commentForm.rating >= 2 ? 'full' : 'hollow'}}.png" width="12" height="12"
+													 data-ng-click="commentForm.rating = 2" />
+											<img data-ng-src="Images/star_{{commentForm.rating >= 3 ? 'full' : 'hollow'}}.png" width="12" height="12"
+													 data-ng-click="commentForm.rating = 3" />
+											<img data-ng-src="Images/star_{{commentForm.rating >= 4 ? 'full' : 'hollow'}}.png" width="12" height="12"
+													 data-ng-click="commentForm.rating = 4" />
+											<img data-ng-src="Images/star_{{commentForm.rating >= 5 ? 'full' : 'hollow'}}.png" width="12" height="12"
+													 data-ng-click="commentForm.rating = 5" />
+										</div>
+										<button data-ng-click="submitComment()">Submit</button>
+									</form>
                 </div>
                 <div class="info-panel-comment-list">
                     <div class="info-panel-comment-container"
@@ -302,7 +317,22 @@ If the results list is empty, display a message instead indicating that no resul
             <div class="info-panel-container">
                 <div class="info-panel-subtitle">Comments</div>
                 <div class="info-panel-comment-submit">
-                    <!--TODO: Comment Submission-->
+                    <form>
+											<textarea data-ng-model="commentForm.body" ></textarea>
+											<div class="starbar">
+												<img data-ng-src="Images/star_{{commentForm.rating >= 1 ? 'full' : 'hollow'}}.png" width="12" height="12"
+														 data-ng-click="commentForm.rating = 1" />
+												<img data-ng-src="Images/star_{{commentForm.rating >= 2 ? 'full' : 'hollow'}}.png" width="12" height="12"
+														 data-ng-click="commentForm.rating = 2" />
+												<img data-ng-src="Images/star_{{commentForm.rating >= 3 ? 'full' : 'hollow'}}.png" width="12" height="12"
+														 data-ng-click="commentForm.rating = 3" />
+												<img data-ng-src="Images/star_{{commentForm.rating >= 4 ? 'full' : 'hollow'}}.png" width="12" height="12"
+														 data-ng-click="commentForm.rating = 4" />
+												<img data-ng-src="Images/star_{{commentForm.rating >= 5 ? 'full' : 'hollow'}}.png" width="12" height="12"
+														 data-ng-click="commentForm.rating = 5" />
+											</div>
+											<button data-ng-click="submitComment()">Submit</button>
+										</form>
                 </div>
                 <div class="info-panel-comment-list">
                     <div class="info-panel-comment-container"
