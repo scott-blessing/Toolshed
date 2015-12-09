@@ -57,10 +57,12 @@ body {
 }
 .popular-list
 {
+    
     padding-top: 30px;
 }
 .result-list-lab-item
 {
+    
     padding-top: 5px;
     /*border: 1px solid #686868;*/
 
@@ -92,13 +94,19 @@ body {
 }
 .info-panel-subtitle
 {
+    font-family: bebas-neue, sans-serif;
+    color: #464646;
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 25px;
+    text-align: center;
 }
 .info-panel-desc
 {
     padding-top: 10px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 25px;
 
 }
 .info-panel-title
@@ -116,7 +124,7 @@ body {
     background-color:#5c9bb7;
     background-image: url(../Images/blurred%20background%20p2%203.jpg);
 
-    box-shadow: 0px 2px 2px #ccc;
+    box-shadow: 0px 2px 2px #464646;
     border-radius: 2px;
     width: 400px;
     padding: 14px;
