@@ -108,7 +108,7 @@ If the results list is empty, display a message instead indicating that no resul
             </div>
             <div class="info-panel-container">
                 <div class="info-panel-map">
-									<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12203.756918782326!2d-88.2169016!3d40.12135775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1449545834376" width="900" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+									<div id="labMap"></div>
 								</div>
             </div>
             <div class="info-panel-desc">{{curSelectedResult.location}}</div>
@@ -161,7 +161,7 @@ If the results list is empty, display a message instead indicating that no resul
             </div>
             <div class="info-panel-desc">{{curSelectedResult.desc}}</div>
             <div class="info-panel-container">
-                <!--TODO: Map-->
+                <div id="toolMap"></div>
                 <div class="info-panel-lab-list">
                     <!--TODO: Lab sorting DDL-->
                     <table class="info-panel-lab-table">
@@ -214,7 +214,7 @@ If the results list is empty, display a message instead indicating that no resul
             </div>
             <div class="info-panel-desc">{{curSelectedResult.desc}}</div>
             <div class="info-panel-container">
-                <!--TODO: Map-->
+                <div id="softMap"></div>
                 <div class="info-panel-lab-list">
                     <!--TODO: Lab sorting DDL-->
                     <table class="info-panel-lab-table">

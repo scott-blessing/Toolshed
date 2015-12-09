@@ -57,6 +57,30 @@
 		$scope.select = function (res) {
 			$scope.curSelectedResult = res;
 			$scope.sortMethod = $scope.sortMethods.PROX;
+
+			alert("loading map data for " + res.location);
+			if (DataService.getType(res) === DataService.type.LAB) {
+				geocoder = new google.maps.Geocoder();
+				geocoder.geocode({
+					'address': res.location
+				}, function (results, status) {
+					if (status == google.maps.GeocoderStatus.OK) {
+						var myOptions = {
+							zoom: 8,
+							center: results[0].geometry.location
+						}
+						map = new google.maps.Map(document.getElementById("labMap"), myOptions);
+
+						var marker = new google.maps.Marker({
+							map: map,
+							position: results[0].geometry.location
+						});
+					}
+					else {
+						alert("Failure loading map data");
+					}
+				});
+			}
 		};
 
 		$scope.getSortedCurToolLocations = function () {
