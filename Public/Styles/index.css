@@ -102,3 +102,10 @@ body {
     font-family: bebas-neue, sans-serif;
     color: #464646;
 }
+
+.user-report {
+    font-size: 25px;
+    padding-right: 50px;
+    position: relative;
+    top: 15px;
+}
