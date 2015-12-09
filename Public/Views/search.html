@@ -212,7 +212,8 @@ If the results list is empty, display a message instead indicating that no resul
                     </table>
                 </div>
             </div>
-            <div class="info-panel-container">
+            <div class="info-panel-container"
+								 data-ng-if="loggedIn() || curSelectedResult.guides.length > 0">
                 <div class="info-panel-subtitle">Guides</div>
                 <div class="info-panel-guide-list">
                     <div class="info-panel-guide-entry"
@@ -272,23 +273,24 @@ If the results list is empty, display a message instead indicating that no resul
                     </table>
                 </div>
             </div>
-            <div class="info-panel-container">
-                <div class="info-panel-subtitle">Guides</div>
-                <div class="info-panel-guide-list">
-                    <div class="info-panel-guide-entry"
-                         data-ng-repeat="g in curSelectedResult.guides"
-                         data-ng-click="searchFor(g)">
-                        <div class="guide-title">{{g}}</div>
-												<div class="guide-rating">
-													<img src="Images/star_full.png" width="12" height="12" />
-													{{getGuideRatingText(g)}}
-												</div>
-                    </div>
-                </div>
-							<div class="guide-link"
-									 data-ng-if="loggedIn()"
-									 data-ng-click="submitGuide()">Submit a Guide</div>
-            </div>
+					<div class="info-panel-container"
+							 data-ng-if="loggedIn() || curSelectedResult.guides.length > 0">
+						<div class="info-panel-subtitle">Guides</div>
+						<div class="info-panel-guide-list">
+							<div class="info-panel-guide-entry"
+									 data-ng-repeat="g in curSelectedResult.guides"
+									 data-ng-click="searchFor(g)">
+								<div class="guide-title">{{g}}</div>
+								<div class="guide-rating">
+									<img src="Images/star_full.png" width="12" height="12" />
+									{{getGuideRatingText(g)}}
+								</div>
+							</div>
+						</div>
+						<div class="guide-link"
+								 data-ng-if="loggedIn()"
+								 data-ng-click="submitGuide()">Submit a Guide</div>
+					</div>
         </div> 
 
 

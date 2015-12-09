@@ -101,11 +101,11 @@ body {
     box-shadow: 0 10px 6px -6px #777;
 }
 
-.info-panel-header
-{
-    font-family: bebas-neue, sans-serif;
-    color: #464646;
-    font-size: 36px;
+.info-panel-header {
+  color: #464646;
+  font-family: bebas-neue,sans-serif;
+  font-size: 36px;
+  height: 45px;
 }
 .info-panel-subtitle
 {
@@ -124,11 +124,12 @@ body {
     margin-bottom: 25px;
 
 }
-.info-panel-title
-{
-    font-size: 34px;
-    padding-bottom: 5px;
-    text-align: center;
+.info-panel-title {
+  float: left;
+  font-size: 34px;
+  padding-bottom: 5px;
+  text-align: center;
+  padding-left: 15px;
 }
 
 
@@ -175,3 +176,38 @@ body {
     text-indent: 40px;
 }
 
+.info-panel-header img {
+  float: left;
+  padding-top: 5px;
+}
+
+.info-panel-header .star {
+  float: right;
+}
+
+.info-panel-comment-submit {
+  background-color: #aaaaaa;
+  padding: 5px;
+	margin: 4px;
+}
+
+.info-panel-comment-list {
+  padding-left: 5px;
+  padding-top: 5px;
+  border-top: solid 2px #000000;
+}
+
+.info-panel-comment-container {
+  background-color: #a9a9a9;
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+}
+
+.comment-user {
+  float: left;
+}
+
+.comment-rating {
+  padding-left: 90px;
+}
