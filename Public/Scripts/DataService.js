@@ -199,6 +199,9 @@
 		};
 
 		factory.getType = function (item) {
+			if (item === null)
+				return '';
+
 			if (itemInArray(item, factory.labs))
 				return factory.type.LAB;
 			if (itemInArray(item, factory.tools))

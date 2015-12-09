@@ -89,6 +89,9 @@ body {
     padding-top: 5px;
 }
 
+.selected {
+	color: white;
+}
 
 .info-panel-map
 {
@@ -128,6 +131,12 @@ body {
     text-align: center;
 }
 
+
+.info-panel-container {
+	background-color: #929292;
+	padding: 2px;
+	margin: 5px;
+}
 
 .bar
 {

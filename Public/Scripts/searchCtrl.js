@@ -1,59 +1,6 @@
 ﻿angular.module('toolshedApp')
 	.controller('SearchCtrl', ['$scope', '$routeParams', '$location', 'UserService', 'DataService', function ($scope, $routeParams, $location, UserService, DataService) {
 
-		/////////////////Page Load//////////////////
-		
-		$scope.types = DataService.type;
-		$scope.sortMethods = {
-			PROX: 'Proximity',
-			RATING: 'Rating'
-		};
-
-		$scope.sortMethod = $scope.sortMethods.PROX;
-
-		$scope.searchInput = $routeParams.query;
-		$scope.results_labs = [];
-		$scope.results_tools = [];
-		$scope.results_software = [];
-		$scope.results_guides = [];
-
-		$scope.popularSearches = DataService.popular;
-		$scope.favorites = [];
-
-		//Load search results
-		$scope.results_labs = DataService.labs;
-		$scope.results_tools = DataService.tools;
-		$scope.results_software = DataService.software;
-		$scope.results_guides = DataService.guides;
-		//TODO: Filter on search input
-
-
-		if ($scope.searchInput === "labs") {
-			$scope.results_tools = [];
-			$scope.results_software = [];
-			$scope.results_guides = [];
-		}
-		if ($scope.searchInput === "tools") {
-			$scope.results_labs = [];
-			$scope.results_software = [];
-			$scope.results_guides = [];
-		}
-		if ($scope.searchInput === "software") {
-			$scope.results_labs = [];
-			$scope.results_tools = [];
-			$scope.results_guides = [];
-		}
-		if ($scope.searchInput === "guides") {
-			$scope.results_labs = [];
-			$scope.results_tools = [];
-			$scope.results_software = [];
-		}
-
-
-		$scope.curSelectedResult = $scope.results_labs[0];
-		//TODO: Select best match
-		//TODO: Account for all empty arrays
-
 		$scope.loggedIn = function () {
 			return UserService.username !== "";
 		};
@@ -62,7 +9,6 @@
 			$scope.favorites = UserService.favorites;
 		}
 
-		///////////////////////Events/////////////////////
 		$scope.search = function () {
 			$location.path('search/' + $scope.searchInput);
 		};
@@ -79,7 +25,6 @@
 			$scope.curSelectedResult = res;
 			$scope.sortMethod = $scope.sortMethods.PROX;
 
-			alert("loading map data for " + res.location);
 			if (DataService.getType(res) === DataService.type.LAB) {
 				geocoder = new google.maps.Geocoder();
 				geocoder.geocode({
@@ -87,7 +32,7 @@
 				}, function (results, status) {
 					if (status == google.maps.GeocoderStatus.OK) {
 						var myOptions = {
-							zoom: 8,
+							zoom: 14,
 							center: results[0].geometry.location
 						}
 						map = new google.maps.Map(document.getElementById("labMap"), myOptions);
@@ -96,9 +41,6 @@
 							map: map,
 							position: results[0].geometry.location
 						});
-					}
-					else {
-						alert("Failure loading map data");
 					}
 				});
 			}
@@ -148,5 +90,66 @@
 				UserService.favorites.push($scope.curSelectedResult.title);
 			}
 		};
+
+
+
+
+		//////////////////////////////////
+
+
+		$scope.types = DataService.type;
+		$scope.sortMethods = {
+			PROX: 'Proximity',
+			RATING: 'Rating'
+		};
+
+		$scope.sortMethod = $scope.sortMethods.PROX;
+
+		$scope.searchInput = $routeParams.query;
+
+		$scope.popularSearches = DataService.popular;
+		$scope.favorites = [];
+
+		//Load search results
+		$scope.results_labs = DataService.labs;
+		$scope.results_tools = DataService.tools;
+		$scope.results_software = DataService.software;
+		$scope.results_guides = DataService.guides;
+		//TODO: Filter on search input
+
+
+		if ($scope.searchInput === "labs") {
+			$scope.results_tools = [];
+			$scope.results_software = [];
+			$scope.results_guides = [];
+		}
+		if ($scope.searchInput === "tools") {
+			$scope.results_labs = [];
+			$scope.results_software = [];
+			$scope.results_guides = [];
+		}
+		if ($scope.searchInput === "software") {
+			$scope.results_labs = [];
+			$scope.results_tools = [];
+			$scope.results_guides = [];
+		}
+		if ($scope.searchInput === "guides") {
+			$scope.results_labs = [];
+			$scope.results_tools = [];
+			$scope.results_software = [];
+		}
+
+		if ($scope.results_labs.length > 0)
+			$scope.select($scope.results_labs[0]);
+		else if ($scope.results_tools.length > 0)
+			$scope.select($scope.results_tools[0]);
+		else if ($scope.results_software.length > 0)
+			$scope.select($scope.results_software[0]);
+		else if ($scope.results_guides.length > 0)
+			$scope.select($scope.results_guides[0]);
+		else
+			$scope.select = null;
+
+
 
 	}]);

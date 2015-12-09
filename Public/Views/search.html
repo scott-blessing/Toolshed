@@ -33,7 +33,8 @@ If the results list is empty, display a message instead indicating that no resul
                          data-ng-repeat="r in results_labs"
                          data-ng-click="select(r)">
 												<img src="Images/lab.png" width="24" height="24"/>
-                        <div class="result-list-item-title">{{r.title}}</div>
+                        <div class="result-list-item-title"
+														 data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
                     </div>
                 </div>
                 <div class="result-list-tools">
@@ -41,7 +42,8 @@ If the results list is empty, display a message instead indicating that no resul
                          data-ng-repeat="r in results_tools"
                          data-ng-click="select(r)">
 												<img src="Images/tool.png" width="24" height="24" />
-                        <div class="result-list-item-title">{{r.title}}</div>
+												<div class="result-list-item-title"
+													 data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
                     </div>
                 </div>
                 <div class="result-list-software">
@@ -49,7 +51,8 @@ If the results list is empty, display a message instead indicating that no resul
                          data-ng-repeat="r in results_software"
                          data-ng-click="select(r)">
 												<img src="Images/software.png" width="24" height="24" />
-                        <div class="result-list-item-title">{{r.title}}</div>
+											<div class="result-list-item-title"
+													 data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
                     </div>
                 </div>
                 <div class="result-list-labs">
@@ -57,7 +60,8 @@ If the results list is empty, display a message instead indicating that no resul
                          data-ng-repeat="r in results_guides"
                          data-ng-click="select(r)">
 												<img src="Images/guide.png" width="24" height="24" />
-                        <div class="result-list-item-title">{{r.title}}</div>
+											<div class="result-list-item-title"
+													 data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
                     </div>
                 </div>
             </ul>
@@ -108,7 +112,7 @@ If the results list is empty, display a message instead indicating that no resul
             </div>
             <div class="info-panel-container">
                 <div class="info-panel-map">
-									<div id="labMap"></div>
+									<div id="labMap" style="height:400px"></div>
 								</div>
             </div>
             <div class="info-panel-desc">{{curSelectedResult.location}}</div>
@@ -161,7 +165,7 @@ If the results list is empty, display a message instead indicating that no resul
             </div>
             <div class="info-panel-desc">{{curSelectedResult.desc}}</div>
             <div class="info-panel-container">
-                <div id="toolMap"></div>
+                <div id="toolMap" style="height:400px"></div>
                 <div class="info-panel-lab-list">
                     <!--TODO: Lab sorting DDL-->
                     <table class="info-panel-lab-table">
@@ -214,7 +218,7 @@ If the results list is empty, display a message instead indicating that no resul
             </div>
             <div class="info-panel-desc">{{curSelectedResult.desc}}</div>
             <div class="info-panel-container">
-                <div id="softMap"></div>
+							<div id="softMap" style="height:400px"></div>
                 <div class="info-panel-lab-list">
                     <!--TODO: Lab sorting DDL-->
                     <table class="info-panel-lab-table">
@@ -288,5 +292,6 @@ If the results list is empty, display a message instead indicating that no resul
             </div>
         </div> 
 
+				<div data-ng-if="curSelectedResult === null">Looks like you somehow got no results for your search</div>
     </div>
 </div>
