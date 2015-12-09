@@ -32,36 +32,36 @@ If the results list is empty, display a message instead indicating that no resul
                     <div class="result-list-lab-item"
                          data-ng-repeat="r in results_labs"
                          data-ng-click="select(r)">
-												<img src="Images/lab.png" width="24" height="24"/>
+                        <img src="Images/lab.png" width="24" height="24"/>
                         <div class="result-list-item-title"
-														 data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
+                             data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
                     </div>
                 </div>
                 <div class="result-list-tools">
                     <div class="result-list-tool-item"
                          data-ng-repeat="r in results_tools"
                          data-ng-click="select(r)">
-												<img src="Images/tool.png" width="24" height="24" />
-												<div class="result-list-item-title"
-													 data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
+                        <img src="Images/tool.png" width="24" height="24" />
+                        <div class="result-list-item-title"
+                             data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
                     </div>
                 </div>
                 <div class="result-list-software">
                     <div class="result-list-software-item"
                          data-ng-repeat="r in results_software"
                          data-ng-click="select(r)">
-												<img src="Images/software.png" width="24" height="24" />
-											<div class="result-list-item-title"
-													 data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
+                        <img src="Images/software.png" width="24" height="24" />
+                        <div class="result-list-item-title"
+                             data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
                     </div>
                 </div>
                 <div class="result-list-labs">
                     <div class="result-list-lab-item"
                          data-ng-repeat="r in results_guides"
                          data-ng-click="select(r)">
-												<img src="Images/guide.png" width="24" height="24" />
-											<div class="result-list-item-title"
-													 data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
+                        <img src="Images/guide.png" width="24" height="24" />
+                        <div class="result-list-item-title"
+                             data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
                     </div>
                 </div>
             </ul>
@@ -99,27 +99,27 @@ If the results list is empty, display a message instead indicating that no resul
         <div class="info-panel info-panel-lab"
              data-ng-if="resultType(curSelectedResult) === types.LAB">
             <div class="info-panel-header">
-								<img src="Images/lab.png" width="24" height="24" />
+                <img src="Images/lab.png" width="24" height="24" />
                 <div class="info-panel-title">{{curSelectedResult.title}}</div>
-								<div class="star"
-										 data-ng-if="loggedIn()"
-										 data-ng-click="toggleFavorite()">
-									<img src="Images/star_full.png" width="24" height="24"
-											 data-ng-if="curIsFavorite()" />
-									<img src="Images/star_hollow.png" width="24" height="24"
-											 data-ng-if="!curIsFavorite()" />
-								</div>
+                <div class="star"
+                     data-ng-if="loggedIn()"
+                     data-ng-click="toggleFavorite()">
+                    <img src="Images/star_full.png" width="24" height="24"
+                         data-ng-if="curIsFavorite()" />
+                    <img src="Images/star_hollow.png" width="24" height="24"
+                         data-ng-if="!curIsFavorite()" />
+                </div>
             </div>
             <div class="info-panel-container">
                 <div class="info-panel-map">
-									<div id="labMap" style="height:400px"></div>
-								</div>
+                    <div id="labMap" style="height:400px"></div>
+                </div>
             </div>
             <div class="info-panel-desc">{{curSelectedResult.location}}</div>
-						<div class="info-panel-rating">
-							<img src="Images/star_full.png" width="12" height="12" />
-							{{getRatingText(curSelectedResult)}}
-						</div>
+            <div class="info-panel-rating">
+                <img src="Images/star_full.png" width="12" height="12" />
+                {{getRatingText(curSelectedResult)}}
+            </div>
 
             <div class="info-panel-container">
                 <div class="info-panel-subtitle">Labs</div>
@@ -139,32 +139,32 @@ If the results list is empty, display a message instead indicating that no resul
             <div class="info-panel-container">
                 <div class="info-panel-subtitle">Comments</div>
                 <div class="info-panel-comment-submit"
-										 data-ng-if="loggedIn()">
-									<form>
-										<textarea data-ng-model="commentForm.body"></textarea>
-										<div class="starbar">
-											<img data-ng-src="Images/star_{{commentForm.rating >= 1 ? 'full' : 'hollow'}}.png" width="12" height="12"
-													 data-ng-click="commentForm.rating = 1" />
-											<img data-ng-src="Images/star_{{commentForm.rating >= 2 ? 'full' : 'hollow'}}.png" width="12" height="12"
-													 data-ng-click="commentForm.rating = 2" />
-											<img data-ng-src="Images/star_{{commentForm.rating >= 3 ? 'full' : 'hollow'}}.png" width="12" height="12"
-													 data-ng-click="commentForm.rating = 3" />
-											<img data-ng-src="Images/star_{{commentForm.rating >= 4 ? 'full' : 'hollow'}}.png" width="12" height="12"
-													 data-ng-click="commentForm.rating = 4" />
-											<img data-ng-src="Images/star_{{commentForm.rating >= 5 ? 'full' : 'hollow'}}.png" width="12" height="12"
-													 data-ng-click="commentForm.rating = 5" />
-										</div>
-										<button data-ng-click="submitComment()">Submit</button>
-									</form>
+                     data-ng-if="loggedIn()">
+                    <form>
+                        <textarea data-ng-model="commentForm.body"></textarea>
+                        <div class="starbar">
+                            <img data-ng-src="Images/star_{{commentForm.rating >= 1 ? 'full' : 'hollow'}}.png" width="12" height="12"
+                                 data-ng-click="commentForm.rating = 1" />
+                            <img data-ng-src="Images/star_{{commentForm.rating >= 2 ? 'full' : 'hollow'}}.png" width="12" height="12"
+                                 data-ng-click="commentForm.rating = 2" />
+                            <img data-ng-src="Images/star_{{commentForm.rating >= 3 ? 'full' : 'hollow'}}.png" width="12" height="12"
+                                 data-ng-click="commentForm.rating = 3" />
+                            <img data-ng-src="Images/star_{{commentForm.rating >= 4 ? 'full' : 'hollow'}}.png" width="12" height="12"
+                                 data-ng-click="commentForm.rating = 4" />
+                            <img data-ng-src="Images/star_{{commentForm.rating >= 5 ? 'full' : 'hollow'}}.png" width="12" height="12"
+                                 data-ng-click="commentForm.rating = 5" />
+                        </div>
+                        <button data-ng-click="submitComment()">Submit</button>
+                    </form>
                 </div>
                 <div class="info-panel-comment-list">
                     <div class="info-panel-comment-container"
                          data-ng-repeat="com in curSelectedResult.comments">
                         <div class="comment-user">{{com.user}}</div>
-												<div class="comment-rating">
-													<img src="Images/star_full.png" width="12" height="12" />
-													{{com.rating}}
-												</div>
+                        <div class="comment-rating">
+                            <img src="Images/star_full.png" width="12" height="12" />
+                            {{com.rating}}
+                        </div>
                         <div class="comment-body">{{com.body}}</div>
                     </div>
                 </div>
@@ -175,23 +175,23 @@ If the results list is empty, display a message instead indicating that no resul
         <div class="info-panel info-panel-tool"
              data-ng-if="resultType(curSelectedResult) === types.TOOL">
             <div class="info-panel-header">
-								<img src="Images/tool.png" width="24" height="24" />
+                <img src="Images/tool.png" width="24" height="24" />
                 <div class="info-panel-title">{{curSelectedResult.title}}</div>
-								<div class="star"
-										 data-ng-if="loggedIn()"
-										 data-ng-click="toggleFavorite()">
-									<img src="Images/star_full.png" width="24" height="24"
-											 data-ng-if="curIsFavorite()" />
-									<img src="Images/star_hollow.png" width="24" height="24"
-											 data-ng-if="!curIsFavorite()" />
-								</div>
+                <div class="star"
+                     data-ng-if="loggedIn()"
+                     data-ng-click="toggleFavorite()">
+                    <img src="Images/star_full.png" width="24" height="24"
+                         data-ng-if="curIsFavorite()" />
+                    <img src="Images/star_hollow.png" width="24" height="24"
+                         data-ng-if="!curIsFavorite()" />
+                </div>
             </div>
             <div class="info-panel-desc">{{curSelectedResult.desc}}</div>
             <div class="info-panel-container">
                 <div id="toolMap" style="height:400px"></div>
                 <div class="info-panel-lab-list">
-									<select data-ng-options="meth.name for meth in sortMethodsDDL"
-													data-ng-model="sortMethod"></select>
+                    <select data-ng-options="meth.name for meth in sortMethodsDDL"
+                            data-ng-model="sortMethod"></select>
                     <table class="info-panel-lab-table">
                         <thead>
                             <tr>
@@ -213,22 +213,22 @@ If the results list is empty, display a message instead indicating that no resul
                 </div>
             </div>
             <div class="info-panel-container"
-								 data-ng-if="loggedIn() || curSelectedResult.guides.length > 0">
+                 data-ng-if="loggedIn() || curSelectedResult.guides.length > 0">
                 <div class="info-panel-subtitle">Guides</div>
                 <div class="info-panel-guide-list">
                     <div class="info-panel-guide-entry"
                          data-ng-repeat="g in curSelectedResult.guides"
                          data-ng-click="searchFor(g)">
                         <div class="guide-title">{{g}}</div>
-												<div class="guide-rating">
-													<img src="Images/star_full.png" width="12" height="12" />
-													{{getGuideRatingText(g)}}
-												</div>
+                        <div class="guide-rating">
+                            <img src="Images/star_full.png" width="12" height="12" />
+                            {{getGuideRatingText(g)}}
+                        </div>
                     </div>
                 </div>
-								<div class="guide-link"
-										 data-ng-if="loggedIn()"
-										 data-ng-click="submitGuide()">Submit a Guide</div>
+                <div class="guide-link"
+                     data-ng-if="loggedIn()"
+                     data-ng-click="submitGuide()">Submit a Guide</div>
             </div>
         </div>
 
@@ -236,23 +236,23 @@ If the results list is empty, display a message instead indicating that no resul
         <div class="info-panel info-panel-software"
              data-ng-if="resultType(curSelectedResult) === types.SOFTWARE">
             <div class="info-panel-header">
-								<img src="Images/software.png" width="24" height="24" />
+                <img src="Images/software.png" width="24" height="24" />
                 <div class="info-panel-title">{{curSelectedResult.title}}</div>
-								<div class="star"
-										 data-ng-if="loggedIn()"
-										 data-ng-click="toggleFavorite()">
-									<img src="Images/star_full.png" width="24" height="24"
-											 data-ng-if="curIsFavorite()" />
-									<img src="Images/star_hollow.png" width="24" height="24"
-											 data-ng-if="!curIsFavorite()" />
-								</div>
+                <div class="star"
+                     data-ng-if="loggedIn()"
+                     data-ng-click="toggleFavorite()">
+                    <img src="Images/star_full.png" width="24" height="24"
+                         data-ng-if="curIsFavorite()" />
+                    <img src="Images/star_hollow.png" width="24" height="24"
+                         data-ng-if="!curIsFavorite()" />
+                </div>
             </div>
             <div class="info-panel-desc">{{curSelectedResult.desc}}</div>
             <div class="info-panel-container">
-							<div id="softMap" style="height:400px"></div>
+                <div id="softMap" style="height:400px"></div>
                 <div class="info-panel-lab-list">
-									<select data-ng-options="meth.name for meth in sortMethodsDDL"
-													data-ng-model="sortMethod"></select>
+                    <select data-ng-options="meth.name for meth in sortMethodsDDL"
+                            data-ng-model="sortMethod"></select>
                     <table class="info-panel-lab-table">
                         <thead>
                             <tr>
@@ -273,24 +273,24 @@ If the results list is empty, display a message instead indicating that no resul
                     </table>
                 </div>
             </div>
-					<div class="info-panel-container"
-							 data-ng-if="loggedIn() || curSelectedResult.guides.length > 0">
-						<div class="info-panel-subtitle">Guides</div>
-						<div class="info-panel-guide-list">
-							<div class="info-panel-guide-entry"
-									 data-ng-repeat="g in curSelectedResult.guides"
-									 data-ng-click="searchFor(g)">
-								<div class="guide-title">{{g}}</div>
-								<div class="guide-rating">
-									<img src="Images/star_full.png" width="12" height="12" />
-									{{getGuideRatingText(g)}}
-								</div>
-							</div>
-						</div>
-						<div class="guide-link"
-								 data-ng-if="loggedIn()"
-								 data-ng-click="submitGuide()">Submit a Guide</div>
-					</div>
+            <div class="info-panel-container"
+                 data-ng-if="loggedIn() || curSelectedResult.guides.length > 0">
+                <div class="info-panel-subtitle">Guides</div>
+                <div class="info-panel-guide-list">
+                    <div class="info-panel-guide-entry"
+                         data-ng-repeat="g in curSelectedResult.guides"
+                         data-ng-click="searchFor(g)">
+                        <div class="guide-title">{{g}}</div>
+                        <div class="guide-rating">
+                            <img src="Images/star_full.png" width="12" height="12" />
+                            {{getGuideRatingText(g)}}
+                        </div>
+                    </div>
+                </div>
+                <div class="guide-link"
+                     data-ng-if="loggedIn()"
+                     data-ng-click="submitGuide()">Submit a Guide</div>
+            </div>
         </div> 
 
 
@@ -298,22 +298,22 @@ If the results list is empty, display a message instead indicating that no resul
         <div class="info-panel info-panel-guide"
              data-ng-if="resultType(curSelectedResult) === types.GUIDE">
             <div class="info-panel-header">
-								<img src="Images/guide.png" width="24" height="24" />
+                <img src="Images/guide.png" width="24" height="24" />
                 <div class="info-panel-title">{{curSelectedResult.title}}</div>
                 <div class="star"
-										 data-ng-if="loggedIn()"
-										 data-ng-click="toggleFavorite()">
-									<img src="Images/star_full.png" width="24" height="24" 
-											 data-ng-if="curIsFavorite()"/>
-									<img src="Images/star_hollow.png" width="24" height="24"
-											 data-ng-if="!curIsFavorite()" />
-								</div>
+                     data-ng-if="loggedIn()"
+                     data-ng-click="toggleFavorite()">
+                    <img src="Images/star_full.png" width="24" height="24" 
+                         data-ng-if="curIsFavorite()"/>
+                    <img src="Images/star_hollow.png" width="24" height="24"
+                         data-ng-if="!curIsFavorite()" />
+                </div>
             </div>
             <div class="info-panel-desc">Submitted by {{curSelectedResult.submitUser}} on {{curSelectedResult.submitDate.toDateString()}}</div>
-						<div class="info-panel-rating">
-							<img src="Images/star_full.png" width="12" height="12" />
-							{{getRatingText(curSelectedResult)}}
-						</div>
+            <div class="info-panel-rating">
+                <img src="Images/star_full.png" width="12" height="12" />
+                {{getRatingText(curSelectedResult)}}
+            </div>
             <div class="info-panel-guide-link-container">
                 <a>URL: </a>
                 <a class="guide-url"
@@ -322,41 +322,41 @@ If the results list is empty, display a message instead indicating that no resul
             <div class="info-panel-container">
                 <div class="info-panel-subtitle">Comments</div>
                 <div class="info-panel-comment-submit"
-										 data-ng-if="loggedIn()">
+                     data-ng-if="loggedIn()">
                     <form>
-											<textarea data-ng-model="commentForm.body" ></textarea>
-											<div class="starbar">
-												<img data-ng-src="Images/star_{{commentForm.rating >= 1 ? 'full' : 'hollow'}}.png" width="12" height="12"
-														 data-ng-click="commentForm.rating = 1" />
-												<img data-ng-src="Images/star_{{commentForm.rating >= 2 ? 'full' : 'hollow'}}.png" width="12" height="12"
-														 data-ng-click="commentForm.rating = 2" />
-												<img data-ng-src="Images/star_{{commentForm.rating >= 3 ? 'full' : 'hollow'}}.png" width="12" height="12"
-														 data-ng-click="commentForm.rating = 3" />
-												<img data-ng-src="Images/star_{{commentForm.rating >= 4 ? 'full' : 'hollow'}}.png" width="12" height="12"
-														 data-ng-click="commentForm.rating = 4" />
-												<img data-ng-src="Images/star_{{commentForm.rating >= 5 ? 'full' : 'hollow'}}.png" width="12" height="12"
-														 data-ng-click="commentForm.rating = 5" />
-											</div>
-											<button data-ng-click="submitComment()">Submit</button>
-										</form>
+                        <textarea data-ng-model="commentForm.body" ></textarea>
+                        <div class="starbar">
+                            <img data-ng-src="Images/star_{{commentForm.rating >= 1 ? 'full' : 'hollow'}}.png" width="12" height="12"
+                                 data-ng-click="commentForm.rating = 1" />
+                            <img data-ng-src="Images/star_{{commentForm.rating >= 2 ? 'full' : 'hollow'}}.png" width="12" height="12"
+                                 data-ng-click="commentForm.rating = 2" />
+                            <img data-ng-src="Images/star_{{commentForm.rating >= 3 ? 'full' : 'hollow'}}.png" width="12" height="12"
+                                 data-ng-click="commentForm.rating = 3" />
+                            <img data-ng-src="Images/star_{{commentForm.rating >= 4 ? 'full' : 'hollow'}}.png" width="12" height="12"
+                                 data-ng-click="commentForm.rating = 4" />
+                            <img data-ng-src="Images/star_{{commentForm.rating >= 5 ? 'full' : 'hollow'}}.png" width="12" height="12"
+                                 data-ng-click="commentForm.rating = 5" />
+                        </div>
+                        <button data-ng-click="submitComment()">Submit</button>
+                    </form>
                 </div>
                 <div class="info-panel-comment-list">
                     <div class="info-panel-comment-container"
                          data-ng-repeat="com in curSelectedResult.comments">
                         <div class="comment-user">{{com.user}}</div>
                         <div class="comment-rating">
-													<img src="Images/star_full.png" width="12" height="12"/>
-													{{com.rating}}
-												</div>
+                            <img src="Images/star_full.png" width="15" height="15"/>
+                            {{com.rating}}
+                        </div>
                         <div class="comment-body">{{com.body}}</div>
                     </div>
                 </div>
             </div>
         </div> 
 
-				<div class="info-panel" 
-						 data-ng-if="curSelectedResult === null">
-					<div class="info-panel-desc">Select a result from the list to learn more about it</div>
-				</div>
+        <div class="info-panel" 
+             data-ng-if="curSelectedResult === null">
+            <div class="info-panel-desc">Select a result from the list to learn more about it</div>
+        </div>
     </div>
 </div>
