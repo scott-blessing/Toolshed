@@ -5,15 +5,11 @@
 		$scope.searchInput = '';
 
 		$scope.popularSearches = DataService.popular;
-		$scope.favorites = [];
+		$scope.favorites = UserService.favorites;
 
 		$scope.loggedIn = function () {
 			return UserService.username !== "";
 		};
-
-		if ($scope.loggedIn()) {
-			$scope.favorites = UserService.favorites;
-		}
 
 		//Events
 
