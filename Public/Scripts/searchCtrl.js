@@ -23,7 +23,7 @@
 
 		$scope.select = function (res) {
 			$scope.curSelectedResult = res;
-			$scope.sortMethod = $scope.sortMethods.PROX;
+			$scope.sortMethod = $scope.sortMethodsDDL[0]
 			$scope.commentForm = {
 				body: "",
 				rating: 3
@@ -126,52 +126,28 @@
 
 		var lastData = [];
 
-		$scope.getSortedCurToolLocations = function () {
+		$scope.getSortedCurToolLocations = function (method) {
 			var labs = $scope.curSelectedResult.labs;
 			var data = [];
 			for (var i = 0; i < labs.length; i++) {
 				lab_data = DataService.getLab(labs[i]);
 				var val = { title: lab_data.title };
-				if ($scope.sortMethod === $scope.sortMethods.PROX) {
+				if (method.name === $scope.sortMethods.PROX) {
 					val.sortValue = lab_data.distance;
 					val.sortValueText = lab_data.distance + " miles";
-				} else if ($scope.sortMethod === $scope.sortMethods.RATING) {
+				} else if (method.name === $scope.sortMethods.RATING) {
 					var rating = DataService.getRating(lab_data);
 					val.sortValue = rating;
 					val.sortValueText = (rating == -1) ? "Unrated" : rating + " stars";
 				}
 				data.push(val);
 			}
-			data.sort(labSort)
+			data.sort(labSort);
 
 			if (equalData(data, lastData))
 				return lastData;
 
 			lastData = data;
-			return data;
-		};
-
-		$scope.getSortedCurSoftwareLocations = function () {
-			var labs = $scope.curSelectedResult.labs;
-			var data = [];
-			for (var i = 0; i < labs.length; i++) {
-				lab_data = DataService.getLab(labs[i]);
-				var val = { title: lab_data.title };
-				if ($scope.sortMethod === $scope.sortMethods.PROX) {
-					val.sortValue = lab_data.distance;
-					val.sortValueText = lab_data.distance + " miles";
-				} else if ($scope.sortMethod === $scope.sortMethods.RATING) {
-					var rating = DataService.getRating(lab_data);
-					val.sortValue = rating;
-					val.sortValueText = (rating == -1) ? "Unrated" : rating + " stars";
-				}
-				data.push(val);
-			}
-			data.sort(labSort)
-
-			if (equalData(data, lastData))
-				return lastData;
-
 			return data;
 		};
 
@@ -237,6 +213,13 @@
 			};
 		};
 
+		$scope.getSortingCategory = function (method) {
+			if (method.name === $scope.sortMethods.PROX)
+				return "Distance";
+			else
+				return "Rating";
+		};
+
 		//////////////////////////////////
 
 		$scope.types = DataService.type;
@@ -245,7 +228,12 @@
 			RATING: 'Rating'
 		};
 
-		$scope.sortMethod = $scope.sortMethods.PROX;
+		$scope.sortMethodsDDL = [
+			{ name: $scope.sortMethods.PROX },
+			{ name: $scope.sortMethods.RATING }
+		];
+
+		$scope.sortMethod = $scope.sortMethodsDDL[0];
 
 		$scope.searchInput = $routeParams.query;
 

@@ -190,16 +190,17 @@ If the results list is empty, display a message instead indicating that no resul
             <div class="info-panel-container">
                 <div id="toolMap" style="height:400px"></div>
                 <div class="info-panel-lab-list">
-                    <!--TODO: Lab sorting DDL-->
+									<select data-ng-options="meth.name for meth in sortMethodsDDL"
+													data-ng-model="sortMethod"></select>
                     <table class="info-panel-lab-table">
                         <thead>
                             <tr>
                                 <td>Location</td>
-                                <td>Sorting Category</td>
+                                <td>{{getSortingCategory(sortMethod)}}</td>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr data-ng-repeat="loc in getSortedCurToolLocations()">
+                            <tr data-ng-repeat="loc in getSortedCurToolLocations(sortMethod)">
                                 <td>
                                     {{loc.title}}
                                 </td>
@@ -249,16 +250,17 @@ If the results list is empty, display a message instead indicating that no resul
             <div class="info-panel-container">
 							<div id="softMap" style="height:400px"></div>
                 <div class="info-panel-lab-list">
-                    <!--TODO: Lab sorting DDL-->
+									<select data-ng-options="meth.name for meth in sortMethodsDDL"
+													data-ng-model="sortMethod"></select>
                     <table class="info-panel-lab-table">
                         <thead>
                             <tr>
                                 <td>Location</td>
-                                <td>Sorting Category</td>
+                                <td>{{getSortingCategory(sortMethod)}}</td>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr data-ng-repeat="loc in getSortedCurSofwareLocations()">
+                            <tr data-ng-repeat="loc in getSortedCurToolLocations(sortMethod)">
                                 <td>
                                     {{loc.title}}
                                 </td>
