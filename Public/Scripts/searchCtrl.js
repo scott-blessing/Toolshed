@@ -112,30 +112,67 @@
 			}
 		};
 
+		function equalData(newD, oldD) {
+			if (oldD.length !== newD.length)
+				return false;
+			if (oldD.length === 0)
+				return true;
+			return oldD[0].sortValueText === newD[0].sortValueText;
+		};
+
+		function labSort(labA, labB) {
+			return labA.sortValue - labB.sortValue;
+		};
+
+		var lastData = [];
+
 		$scope.getSortedCurToolLocations = function () {
-			return [{
-				title: "Siebel Center",
-				sortValue: 4,
-				sortValueText: "4 miles"
-			},
-			{
-				title: "Fab Labs",
-				sortValue: 7,
-				sortValueText: "7 miles"
-			}];
+			var labs = $scope.curSelectedResult.labs;
+			var data = [];
+			for (var i = 0; i < labs.length; i++) {
+				lab_data = DataService.getLab(labs[i]);
+				var val = { title: lab_data.title };
+				if ($scope.sortMethod === $scope.sortMethods.PROX) {
+					val.sortValue = lab_data.distance;
+					val.sortValueText = lab_data.distance + " miles";
+				} else if ($scope.sortMethod === $scope.sortMethods.RATING) {
+					var rating = DataService.getRating(lab_data);
+					val.sortValue = rating;
+					val.sortValueText = (rating == -1) ? "Unrated" : rating + " stars";
+				}
+				data.push(val);
+			}
+			data.sort(labSort)
+
+			if (equalData(data, lastData))
+				return lastData;
+
+			lastData = data;
+			return data;
 		};
 
 		$scope.getSortedCurSoftwareLocations = function () {
-			return [{
-				title: "Siebel Center",
-				sortValue: 4,
-				sortValueText: "4 miles"
-			},
-			{
-				title: "Fab Labs",
-				sortValue: 7,
-				sortValueText: "7 miles"
-			}];
+			var labs = $scope.curSelectedResult.labs;
+			var data = [];
+			for (var i = 0; i < labs.length; i++) {
+				lab_data = DataService.getLab(labs[i]);
+				var val = { title: lab_data.title };
+				if ($scope.sortMethod === $scope.sortMethods.PROX) {
+					val.sortValue = lab_data.distance;
+					val.sortValueText = lab_data.distance + " miles";
+				} else if ($scope.sortMethod === $scope.sortMethods.RATING) {
+					var rating = DataService.getRating(lab_data);
+					val.sortValue = rating;
+					val.sortValueText = (rating == -1) ? "Unrated" : rating + " stars";
+				}
+				data.push(val);
+			}
+			data.sort(labSort)
+
+			if (equalData(data, lastData))
+				return lastData;
+
+			return data;
 		};
 
 		$scope.curIsFavorite = function () {

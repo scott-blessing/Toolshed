@@ -138,7 +138,8 @@ If the results list is empty, display a message instead indicating that no resul
             </div>
             <div class="info-panel-container">
                 <div class="info-panel-subtitle">Comments</div>
-                <div class="info-panel-comment-submit">
+                <div class="info-panel-comment-submit"
+										 data-ng-if="loggedIn()">
 									<form>
 										<textarea data-ng-model="commentForm.body"></textarea>
 										<div class="starbar">
@@ -190,7 +191,7 @@ If the results list is empty, display a message instead indicating that no resul
                 <div id="toolMap" style="height:400px"></div>
                 <div class="info-panel-lab-list">
                     <!--TODO: Lab sorting DDL-->
-                    <!--<table class="info-panel-lab-table">
+                    <table class="info-panel-lab-table">
                         <thead>
                             <tr>
                                 <td>Location</td>
@@ -207,7 +208,7 @@ If the results list is empty, display a message instead indicating that no resul
                                 </td>
                             </tr>
                         </tbody>
-                    </table>-->
+                    </table>
                 </div>
             </div>
             <div class="info-panel-container">
@@ -249,7 +250,7 @@ If the results list is empty, display a message instead indicating that no resul
 							<div id="softMap" style="height:400px"></div>
                 <div class="info-panel-lab-list">
                     <!--TODO: Lab sorting DDL-->
-                    <!--<table class="info-panel-lab-table">
+                    <table class="info-panel-lab-table">
                         <thead>
                             <tr>
                                 <td>Location</td>
@@ -266,7 +267,7 @@ If the results list is empty, display a message instead indicating that no resul
                                 </td>
                             </tr>
                         </tbody>
-                    </table>-->
+                    </table>
                 </div>
             </div>
             <div class="info-panel-container">
@@ -316,7 +317,8 @@ If the results list is empty, display a message instead indicating that no resul
             </div>
             <div class="info-panel-container">
                 <div class="info-panel-subtitle">Comments</div>
-                <div class="info-panel-comment-submit">
+                <div class="info-panel-comment-submit"
+										 data-ng-if="loggedIn()">
                     <form>
 											<textarea data-ng-model="commentForm.body" ></textarea>
 											<div class="starbar">
