@@ -118,9 +118,9 @@
 				guides: []
 			},
 			{
-				title: "Digital Computer Laboratory",
-				desc: "Heisenberg was here",
-				labs: ["Siebel Center","DCL"],
+				title: "Matlab",
+				desc: "The worlds greatest IDE ever. Really.",
+				labs: ["Siebel Center","Digital Computer Laboratory"],
 				guides: []
 			}
 		];
@@ -131,6 +131,7 @@
 				submitUser: "blessin2",
 				submitDate: new Date(2015, 8, 11),
 				url: "https://futura.com/3d%20printing%20tutorial",
+				tool: "3D Printer",
 				comments: [
 					{
 						user: "gglolgtg3",
@@ -148,6 +149,7 @@
 				title: "Yo Moma's guide to Sewing",
 				submitUser: "blessin2",
 				submitDate: new Date(2015, 8, 11),
+				tool: "Sewing Machine",
 				url: "https://http://www.amazon.com/Sewing-For-Dummies-Saunders-Maresh/dp/0470623209",
 				comments: [
 					{
@@ -166,6 +168,7 @@
 				title: "Laser Tag for Adult",
 				submitUser: "blessin2",
 				submitDate: new Date(2015, 8, 11),
+				tool: "Laser Printer",
 				url: "https://s-media-cache-ak0.pinimg.com/236x/b1/81/ff/b181ffe4a1cc4a011599444fbd94ae59.jpg",
 				comments: [
 					{

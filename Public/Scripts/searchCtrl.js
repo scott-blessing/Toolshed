@@ -35,7 +35,7 @@
 							zoom: 15,
 							center: results[0].geometry.location
 						}
-						map = new google.maps.Map(document.getElementById("labMap"), myOptions);
+						var map = new google.maps.Map(document.getElementById("labMap"), myOptions);
 
 						var marker = new google.maps.Marker({
 							map: map,
@@ -43,6 +43,68 @@
 						});
 					}
 				});
+			}
+			else if (DataService.getType(res) === DataService.type.TOOL) {
+				var geocoder = new google.maps.Geocoder();
+				var bounds = new google.maps.LatLngBounds();
+				var myOptions = {
+					zoom: 15,
+					center: new google.maps.LatLng(40.1020557, -88.222413)
+				};
+				var mapDiv = document.getElementById("toolMap");
+				if (mapDiv !== null) {
+					var map = new google.maps.Map(mapDiv, myOptions);
+
+					for (var i = 0; i < res.labs.length; i++) {
+						var labName = res.labs[i];
+						var labAddress = DataService.getLab(labName).location;
+
+						geocoder.geocode({
+							'address': labAddress
+						}, function (results, status) {
+							if (status == google.maps.GeocoderStatus.OK) {
+								var marker = new google.maps.Marker({
+									map: map,
+									position: results[0].geometry.location
+								});
+
+								bounds.extend(marker.getPosition());
+								map.fitBounds(bounds);
+							}
+						});
+					}
+				}
+			}
+			else if (DataService.getType(res) === DataService.type.SOFTWARE) {
+				var geocoder = new google.maps.Geocoder();
+				var bounds = new google.maps.LatLngBounds();
+				var myOptions = {
+					zoom: 15,
+					center: new google.maps.LatLng(40.1020557, -88.222413)
+				};
+				var mapDiv = document.getElementById("softMap");
+				if (mapDiv !== null) {
+					var map = new google.maps.Map(mapDiv, myOptions);
+
+					for (var i = 0; i < res.labs.length; i++) {
+						var labName = res.labs[i];
+						var labAddress = DataService.getLab(labName).location;
+
+						geocoder.geocode({
+							'address': labAddress
+						}, function (results, status) {
+							if (status == google.maps.GeocoderStatus.OK) {
+								var marker = new google.maps.Marker({
+									map: map,
+									position: results[0].geometry.location
+								});
+
+								bounds.extend(marker.getPosition());
+								map.fitBounds(bounds);
+							}
+						});
+					}
+				}
 			}
 		};
 
@@ -95,7 +157,6 @@
 
 
 		//////////////////////////////////
-
 
 		$scope.types = DataService.type;
 		$scope.sortMethods = {
@@ -160,6 +221,5 @@
 		};
 
 		filterResults();
-
 
 	}]);
