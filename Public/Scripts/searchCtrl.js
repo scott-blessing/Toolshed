@@ -26,7 +26,28 @@
 		$scope.results_software = DataService.software;
 		$scope.results_guides = DataService.guides;
 		//TODO: Filter on search input
-		//TODO: Special cases for all labs, all tools, all guides, etc.
+
+
+		if ($scope.searchInput === "labs") {
+			$scope.results_tools = [];
+			$scope.results_software = [];
+			$scope.results_guides = [];
+		}
+		if ($scope.searchInput === "tools") {
+			$scope.results_labs = [];
+			$scope.results_software = [];
+			$scope.results_guides = [];
+		}
+		if ($scope.searchInput === "software") {
+			$scope.results_labs = [];
+			$scope.results_tools = [];
+			$scope.results_guides = [];
+		}
+		if ($scope.searchInput === "guides") {
+			$scope.results_labs = [];
+			$scope.results_tools = [];
+			$scope.results_software = [];
+		}
 
 
 		$scope.curSelectedResult = $scope.results_labs[0];

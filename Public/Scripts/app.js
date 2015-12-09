@@ -13,7 +13,7 @@
 				templateUrl: 'Views/report.html',
 				controller: 'ReportCtrl'
 			})
-			.when('/guide', {
+			.when('/guide/:tool', {
 				templateUrl: 'Views/guide.html',
 				controller: 'GuideCtrl'
 			})

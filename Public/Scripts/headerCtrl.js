@@ -24,9 +24,7 @@
 	};
 
 	$scope.reportIssue = function () {
-		//TODO: Report issue button
-		alert("TODO: Implement Report Issue")
-		//$location.path('report');
+		$location.path('report');
 	};
 
 	$scope.returnHome = function () {
