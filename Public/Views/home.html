@@ -10,55 +10,57 @@
 <link href="../Public/Styles/home.css" rel="stylesheet" />
 
 <div>
-	<form data-ng-submit="search()">
-		<input type="text"
-					 data-ng-model="searchInput" />
-		<input type="image" src="Images/search-icon-128.png" width="20" height="20" onclick="return true" />
-	</form>
+	<div class="left">
+        <form data-ng-submit="search()">
+            <div class="bar">
+                <input type="text" ng-model="searchInput" placeholder="Search" class="InputText"/>
+            </div>
+        </form>
 	
-	<div class="popular-list">
-		<div class="popular-header">Popular Searches</div>
-		<ul>
-			<li class="popular-item"
-					data-ng-repeat="p in popularSearches"
-					data-ng-click="searchFor(p)">
-				{{p}}
-			</li>
-		</ul>
-	</div>
+		<div class="popular-list">
+			<div class="popular-header">Popular Searches</div>
+			<ul>
+				<li class="popular-item"
+						data-ng-repeat="p in popularSearches"
+						data-ng-click="searchFor(p)">
+					{{p}}
+				</li>
+			</ul>
+		</div>
 
-	<div class="favorite-list"
-			 data-ng-if="loggedIn()">
-		<div class="popular-header">Favorites</div>
-		<ul>
-			<li class="favorite-item"
-					data-ng-repeat="f in favorites"
-					data-ng-click="searchFor(f)">
-				{{f}}
-			</li>
-		</ul>
-	</div>
+		<div class="favorite-list"
+				 data-ng-if="loggedIn()">
+			<div class="popular-header">Favorites</div>
+			<ul>
+				<li class="favorite-item"
+						data-ng-repeat="f in favorites"
+						data-ng-click="searchFor(f)">
+					{{f}}
+				</li>
+			</ul>
+		</div>
 
-	<div class="buttonstrip">
-		<div class="searchButton"
-				 data-ng-click="searchFor('labs')">
-			<img src="Images/lab.png" width="24" height="24" />
-			<div class="searchButtonText">All Labs</div>
-		</div>
-		<div class="searchButton"
-				 data-ng-click="searchFor('tools')">
-			<img src="Images/tool.png" width="24" height="24" />
-			<div class="searchButtonText">All Tools</div>
-		</div>
-		<div class="searchButton"
-				 data-ng-click="searchFor('software')">
-			<img src="Images/software.png" width="24" height="24" />
-			<div class="searchButtonText">All Software</div>
-		</div>
-		<div class="searchButton"
-				 data-ng-click="searchFor('guides')">
-			<img src="Images/guide.png" width="24" height="24" />
-			<div class="searchButtonText">All Guides</div>
+		<div class="buttonstrip">
+			<div class="searchButton"
+					 data-ng-click="searchFor('labs')">
+				<img src="Images/lab.png" width="24" height="24" />
+				<div class="searchButtonText">All Labs</div>
+			</div>
+			<div class="searchButton"
+					 data-ng-click="searchFor('tools')">
+				<img src="Images/tool.png" width="24" height="24" />
+				<div class="searchButtonText">All Tools</div>
+			</div>
+			<div class="searchButton"
+					 data-ng-click="searchFor('software')">
+				<img src="Images/software.png" width="24" height="24" />
+				<div class="searchButtonText">All Software</div>
+			</div>
+			<div class="searchButton"
+					 data-ng-click="searchFor('guides')">
+				<img src="Images/guide.png" width="24" height="24" />
+				<div class="searchButtonText">All Guides</div>
+			</div>
 		</div>
 	</div>
 </div>
