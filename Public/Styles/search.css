@@ -138,6 +138,10 @@ body {
 	margin: 5px;
 }
 
+.info-panel-comment-container {
+    padding-bottom: 10px;
+}
+
 .bar
 {
     font:15px/1.3 'Open Sans', sans-serif;
