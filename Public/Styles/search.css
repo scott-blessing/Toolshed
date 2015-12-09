@@ -70,27 +70,8 @@ body {
     box-shadow: 0 10px 6px -6px #777;
 }
 
-.result-list-lab-item
-{
-
-    padding-top: 5px;
-    /*border: 1px solid #686868;*/
-
-}
-.result-list-tool-item
-{    padding-top: 5px;
-    /*border: 1px solid #686868;*/
-
-}
-.result-list-software-item
-{
-    /*border: 1px solid #686868;*/
-
-    padding-top: 5px;
-}
-
 .selected {
-	color: white;
+    color: white;
 }
 
 .info-panel-map
@@ -102,10 +83,10 @@ body {
 }
 
 .info-panel-header {
-  color: #464646;
-  font-family: bebas-neue,sans-serif;
-  font-size: 36px;
-  height: 45px;
+    color: #464646;
+    font-family: bebas-neue,sans-serif;
+    font-size: 36px;
+    height: 45px;
 }
 .info-panel-subtitle
 {
@@ -125,18 +106,18 @@ body {
 
 }
 .info-panel-title {
-  float: left;
-  font-size: 34px;
-  padding-bottom: 5px;
-  text-align: center;
-  padding-left: 15px;
+    float: left;
+    font-size: 34px;
+    padding-bottom: 5px;
+    text-align: center;
+    padding-left: 15px;
 }
 
 
 .info-panel-container {
-	background-color: #929292;
-	padding: 2px;
-	margin: 5px;
+    box-shadow: 0 10px 6px -6px #777;
+    padding: px;
+    margin: 5px;
 }
 
 .info-panel-comment-container {
@@ -177,35 +158,38 @@ body {
 }
 
 .info-panel-header img {
-  float: left;
-  padding-top: 5px;
+    float: left;
+    padding-top: 5px;
 }
 
 .info-panel-header .star {
-  float: right;
+    float: right;
 }
 
 .info-panel-comment-submit {
-  background-color: #aaaaaa;
-  padding: 5px;
-	margin: 4px;
+    background-color: #aaaaaa;
+    padding: 5px;
+    margin: 4px;
 }
 
 .info-panel-comment-list {
-  padding-left: 5px;
-  padding-top: 5px;
-  border-top: solid 2px #000000;
+    padding-left: 5px;
+    padding-top: 5px;
+    border-top: solid 2px #000000;
 }
 
 .info-panel-comment-container {
-  background-color: #a9a9a9;
-  margin-bottom: 6px;
-  padding-bottom: 4px;
-  padding-left: 5px;
+    background-color: #a9a9a9;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    padding-left: 5px;
 }
 
 .comment-user {
-  float: left;
+    font-size: 24px;
+    padding-top: 5px;
+    font-family: Times, sans-serif;
+    float: left;
 }
 
 .comment-rating {
@@ -247,4 +231,8 @@ body {
 
 .clickable:hover {
 	cursor: pointer;
+}
+
+.comment-body{
+    margin-left: 200px;
 }
