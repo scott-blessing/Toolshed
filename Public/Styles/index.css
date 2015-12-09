@@ -80,9 +80,18 @@ body {
 }
 .text-center
 {
-    position: absolute;;
+    border-width: 10px;
+    position: absolute;
     bottom: 0px;    
 }
 #fullPage {
     min-height: 100%;
+}
+
+.text-center {
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    font-family: bebas-neue, sans-serif;
+    color: #464646;
 }
