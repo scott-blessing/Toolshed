@@ -12,7 +12,7 @@ By default, when the page loads the first result in the list will be opened in t
 If the results list is empty, display a message instead indicating that no results were obtained
 -->
 
-<link href="../Styles/hover-min.css" rel="stylesheet">
+<link href="../Styles/hover.css" rel="stylesheet">
 <link href="../Public/Styles/search.css" rel="stylesheet" />
 
 <div>
@@ -154,7 +154,7 @@ If the results list is empty, display a message instead indicating that no resul
                             <img data-ng-src="Images/star_{{commentForm.rating >= 5 ? 'full' : 'hollow'}}.png" width="12" height="12"
                                  data-ng-click="commentForm.rating = 5" />
                         </div>
-                        <button data-ng-click="submitComment()">Submit</button>
+                        <button id=SubmitButtom data-ng-click="submitComment()">Submit</button>
                     </form>
                 </div>
                 <div class="info-panel-comment-list">
@@ -339,9 +339,7 @@ If the results list is empty, display a message instead indicating that no resul
                             <img data-ng-src="Images/star_{{commentForm.rating >= 5 ? 'full' : 'hollow'}}.png" width="12" height="12"
                                  data-ng-click="commentForm.rating = 5" />
                         </div>
-                        <div id="SubmitButtom">
-                            <class data-ng-click="submitComment()">Submit</button>
-                        </div>
+                            <div id="SubmitButtom" class="button" data-ng-click="submitComment()">Submit</div>
                     </form>
                 </div>
                 <div class="info-panel-comment-list">
