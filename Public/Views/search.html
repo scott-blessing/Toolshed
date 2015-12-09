@@ -11,9 +11,10 @@ The info panel will contain different information based on the type of result ch
 By default, when the page loads the first result in the list will be opened in the info panel
 If the results list is empty, display a message instead indicating that no results were obtained
 -->
-
-<link href="../Styles/hover.css" rel="stylesheet">
-<link href="../Public/Styles/search.css" rel="stylesheet" />
+<head>
+    <link href="../Styles/hover.css" rel="stylesheet" media="all">
+    <link href="../Public/Styles/search.css" rel="stylesheet" />
+</head>
 
 <div>
     <!--LEFT COLUMN-->
@@ -33,7 +34,7 @@ If the results list is empty, display a message instead indicating that no resul
                          data-ng-repeat="r in results_labs"
                          data-ng-click="select(r)">
                         <img src="Images/lab.png" width="24" height="24"/>
-                        <div class="result-list-item-title"
+                        <div class="result-list-item-title hvr-bounce-in"
                              data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
                     </div>
                 </div>
@@ -42,16 +43,16 @@ If the results list is empty, display a message instead indicating that no resul
                          data-ng-repeat="r in results_tools"
                          data-ng-click="select(r)">
                         <img src="Images/tool.png" width="24" height="24" />
-                        <div class="result-list-item-title"
+                        <div class="result-list-item-title hvr-bounce-in"
                              data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
                     </div>
                 </div>
                 <div class="result-list-software">
-                    <div class="result-list-item result-list-software-item clickable"
+                    <div class="result-list-item result-list-software-item"
                          data-ng-repeat="r in results_software"
                          data-ng-click="select(r)">
                         <img src="Images/software.png" width="24" height="24" />
-                        <div class="result-list-item-title"
+                        <div class="result-list-item-title hvr-bounce-in"
                              data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
                     </div>
                 </div>
@@ -60,7 +61,7 @@ If the results list is empty, display a message instead indicating that no resul
                          data-ng-repeat="r in results_guides"
                          data-ng-click="select(r)">
                         <img src="Images/guide.png" width="24" height="24" />
-                        <div class="result-list-item-title"
+                        <div class="result-list-item-title hvr-bounce-in"
                              data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
                     </div>
                 </div>
@@ -80,7 +81,7 @@ If the results list is empty, display a message instead indicating that no resul
 
         <div class="favorite-list"
              data-ng-if="loggedIn()">
-            <div class="popular-header">Favorites</div>
+            <div class="popular-header ">Favorites</div>
             <ul>
                 <li class="favorite-item clickable"
                     data-ng-repeat="f in favorites"
@@ -339,7 +340,7 @@ If the results list is empty, display a message instead indicating that no resul
                             <img data-ng-src="Images/star_{{commentForm.rating >= 5 ? 'full' : 'hollow'}}.png" width="12" height="12"
                                  data-ng-click="commentForm.rating = 5" />
                         </div>
-                            <div id="SubmitButtom" class="button" data-ng-click="submitComment()">Submit</div>
+                        <button id="SubmitButtom" data-ng-click="submitComment()">Submit</button>
                     </form>
                 </div>
                 <div class="info-panel-comment-list">
