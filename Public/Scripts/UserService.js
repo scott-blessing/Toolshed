@@ -2,6 +2,6 @@
 	.factory('UserService', function () {
 		return {
 			username: '',
-			favorites: ['Everett', 'MatLab']
+			favorites: ['Siebel Center', 'Digital Computer Laboratory']
 		};
 	});

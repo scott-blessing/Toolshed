@@ -53,7 +53,7 @@
 				sortValueText: "4 miles"
 			},
 			{
-				title: "Fab Lab",
+				title: "Fab Labs",
 				sortValue: 7,
 				sortValueText: "7 miles"
 			}];
@@ -66,19 +66,19 @@
 				sortValueText: "4 miles"
 			},
 			{
-				title: "Fab Lab",
+				title: "Fab Labs",
 				sortValue: 7,
 				sortValueText: "7 miles"
 			}];
 		};
 
 		$scope.curIsFavorite = function () {
-			var isFav = false;
-			for (i = 0; i < $scope.favorites.length; i++) {
-				if ($scope.favorites[i] === $scope.curSelectedResult.title)
-					isFav = true;
+			for (var i = 0; i < $scope.favorites.length; i++) {
+				if ($scope.favorites[i] === $scope.curSelectedResult.title) {
+					return true;
+				}
 			}
-			return isFav;
+			return false;
 		};
 
 		$scope.toggleFavorite = function () {
@@ -108,7 +108,7 @@
 		$scope.searchInput = $routeParams.query;
 
 		$scope.popularSearches = DataService.popular;
-		$scope.favorites = [];
+		$scope.favorites = UserService.favorites;
 
 		//Load search results
 		$scope.results_labs = DataService.labs;
@@ -119,44 +119,47 @@
 
 		$scope.curSelectedResult = null;
 
-		if ($scope.searchInput === "labs") {
-			$scope.results_tools = [];
-			$scope.results_software = [];
-			$scope.results_guides = [];
-		}
-		if ($scope.searchInput === "tools") {
-			$scope.results_labs = [];
-			$scope.results_software = [];
-			$scope.results_guides = [];
-		}
-		if ($scope.searchInput === "software") {
-			$scope.results_labs = [];
-			$scope.results_tools = [];
-			$scope.results_guides = [];
-		}
-		if ($scope.searchInput === "guides") {
-			$scope.results_labs = [];
-			$scope.results_tools = [];
-			$scope.results_software = [];
-		}
+		function filterResults() {
+			if ($scope.searchInput === "labs") {
+				$scope.results_tools = [];
+				$scope.results_software = [];
+				$scope.results_guides = [];
+			}
+			if ($scope.searchInput === "tools") {
+				$scope.results_labs = [];
+				$scope.results_software = [];
+				$scope.results_guides = [];
+			}
+			if ($scope.searchInput === "software") {
+				$scope.results_labs = [];
+				$scope.results_tools = [];
+				$scope.results_guides = [];
+			}
+			if ($scope.searchInput === "guides") {
+				$scope.results_labs = [];
+				$scope.results_tools = [];
+				$scope.results_software = [];
+			}
 
-		for (var i = 0; i < $scope.results_labs.length; i++) {
-			if ($scope.searchInput === $scope.results_labs[i].title)
-				$scope.select($scope.results_labs[i]);
-		}
-		for (var i = 0; i < $scope.results_tools.length; i++) {
-			if ($scope.searchInput === $scope.results_tools[i].title)
-				$scope.select($scope.results_tools[i]);
-		}
-		for (var i = 0; i < $scope.results_software.length; i++) {
-			if ($scope.searchInput === $scope.results_software[i].title)
-				$scope.select($scope.results_software[i]);
-		}
-		for (var i = 0; i < $scope.results_guides.length; i++) {
-			if ($scope.searchInput === $scope.results_guides[i].title)
-				$scope.select($scope.results_guides[i]);
-		}
+			for (var i = 0; i < $scope.results_labs.length; i++) {
+				if ($scope.searchInput === $scope.results_labs[i].title)
+					$scope.select($scope.results_labs[i]);
+			}
+			for (var i = 0; i < $scope.results_tools.length; i++) {
+				if ($scope.searchInput === $scope.results_tools[i].title)
+					$scope.select($scope.results_tools[i]);
+			}
+			for (var i = 0; i < $scope.results_software.length; i++) {
+				if ($scope.searchInput === $scope.results_software[i].title)
+					$scope.select($scope.results_software[i]);
+			}
+			for (var i = 0; i < $scope.results_guides.length; i++) {
+				if ($scope.searchInput === $scope.results_guides[i].title)
+					$scope.select($scope.results_guides[i]);
+			}
+		};
 
+		filterResults();
 
 
 	}]);
