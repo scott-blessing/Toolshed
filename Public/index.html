@@ -43,12 +43,12 @@
             <!--Header-->
             <div id="header" data-ng-controller="HeaderCtrl">
                 <div class="logo">
-									<div class="large-text button hvr-float"
+									<div class="large-text button hvr-grow-rotate"
 											 data-ng-click="returnHome()">Toolshed</div>
                     <div data-ng-show="loggedIn()"
                          class="right">
                         <div style="float:left;">
-                            <a data-ng-click="reportIssue()" class="user-report">Report Issue</a>
+                            <a data-ng-click="reportIssue()" class="user-report hvr-grow-rotate">Report Issue</a>
                             <a class="user-report">{{username}}</a>
                         </div>
                         <div id="login" class="right">
