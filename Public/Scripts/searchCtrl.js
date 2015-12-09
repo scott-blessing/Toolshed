@@ -155,6 +155,25 @@
 			$location.path('guide/' + $scope.curSelectedResult.title);
 		};
 
+		$scope.getRatingText = function (item) {
+			return DataService.getRating(item);
+		};
+
+		$scope.getRatingText = function (item) {
+			var rating = DataService.getRating(item);
+			if (rating === -1)
+				return "Unrated";
+			else
+				return rating.toFixed(1);
+		};
+
+		$scope.getGuideRatingText = function (guideName) {
+			return $scope.getRatingText(DataService.getGuide(guideName));
+		};
+
+		$scope.getLabRatingText = function (labName) {
+			return $scope.getRatingText(DataService.getLab(labName));
+		};
 
 		//////////////////////////////////
 

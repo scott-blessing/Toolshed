@@ -7,6 +7,7 @@
 			{
 				title: "Siebel Center",
 				location: "201 N Goodwin Ave, Urbana IL 61801",
+				distance: 7.2,
 				labs: ["0403", "0221", "0220", "0222", "0225"],
 				tools: ["3D Printer", "AutoCAD 3D","Matlab"],
 				comments: [
@@ -25,6 +26,7 @@
 			{
 				title: "ECE Building",
 				location: "306 N Wright St, Urbana, IL 61801",
+				distance: 3.4,
 				labs:["2001","0101","0202","0420"],
 				tools:["3D Printer","Oscilloscope"],
 				comments: [
@@ -44,6 +46,7 @@
 			{
 				title: "Digital Computer Laboratory",
 				location: "1304 W. Springfield, Urbana, IL 61801",
+				distance: 1.9,
 				labs:["2201","0201","0203","0420"],
 				tools:["Matlab"],
 				comments: [
@@ -63,6 +66,7 @@
 			{
 				title: "Fab Labs",
 				location: "1301 S Goodwin Ave, Urbana, IL 61801",
+				distance: 3.2,
 				labs:["Fab Labs"],
 				tools:["3D Printer","Sewing Machine","Laser Printer"],
 				comments: [
@@ -242,6 +246,18 @@
 				if (factory.guides[i].title === title)
 					return factory.guides[i];
 			}
+		};
+
+		factory.getRating = function (item) {
+			if (!('comments' in item))
+				return -1;
+			var comments = item.comments;
+			var sum = 0;
+			for (var i = 0; i < comments.length; i++) {
+				var c = comments[i];
+				sum += c.rating;
+			}
+			return (sum / comments.length);
 		};
 
 		return factory;

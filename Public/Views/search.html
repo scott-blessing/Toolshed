@@ -116,6 +116,10 @@ If the results list is empty, display a message instead indicating that no resul
 								</div>
             </div>
             <div class="info-panel-desc">{{curSelectedResult.location}}</div>
+						<div class="info-panel-rating">
+							<img src="Images/star_full.png" width="12" height="12" />
+							{{getRatingText(curSelectedResult)}}
+						</div>
 
             <div class="info-panel-container">
                 <div class="info-panel-subtitle">Labs</div>
@@ -141,7 +145,10 @@ If the results list is empty, display a message instead indicating that no resul
                     <div class="info-panel-comment-container"
                          data-ng-repeat="com in curSelectedResult.comments">
                         <div class="comment-user">{{com.user}}</div>
-                        <div class="comment-rating">Rating: {{com.rating}}</div>
+												<div class="comment-rating">
+													<img src="Images/star_full.png" width="12" height="12" />
+													{{com.rating}}
+												</div>
                         <div class="comment-body">{{com.body}}</div>
                     </div>
                 </div>
@@ -195,7 +202,10 @@ If the results list is empty, display a message instead indicating that no resul
                          data-ng-repeat="g in curSelectedResult.guides"
                          data-ng-click="searchFor(g)">
                         <div class="guide-title">{{g}}</div>
-                        <!--TODO: Display guide ratings-->
+												<div class="guide-rating">
+													<img src="Images/star_full.png" width="12" height="12" />
+													{{getGuideRatingText(g)}}
+												</div>
                     </div>
                 </div>
 								<div class="guide-link"
@@ -251,7 +261,10 @@ If the results list is empty, display a message instead indicating that no resul
                          data-ng-repeat="g in curSelectedResult.guides"
                          data-ng-click="searchFor(g)">
                         <div class="guide-title">{{g}}</div>
-                        <!--TODO: Display guide ratings-->
+												<div class="guide-rating">
+													<img src="Images/star_full.png" width="12" height="12" />
+													{{getGuideRatingText(g)}}
+												</div>
                     </div>
                 </div>
 							<div class="guide-link"
@@ -277,6 +290,10 @@ If the results list is empty, display a message instead indicating that no resul
 								</div>
             </div>
             <div class="info-panel-desc">Submitted by {{curSelectedResult.submitUser}} on {{curSelectedResult.submitDate.toDateString()}}</div>
+						<div class="info-panel-rating">
+							<img src="Images/star_full.png" width="12" height="12" />
+							{{getRatingText(curSelectedResult)}}
+						</div>
             <div class="info-panel-guide-link-container">
                 <a>URL: </a>
                 <a class="guide-url"
@@ -291,7 +308,10 @@ If the results list is empty, display a message instead indicating that no resul
                     <div class="info-panel-comment-container"
                          data-ng-repeat="com in curSelectedResult.comments">
                         <div class="comment-user">{{com.user}}</div>
-                        <div class="comment-rating">Rating: {{com.rating}}</div>
+                        <div class="comment-rating">
+													<img src="Images/star_full.png" width="12" height="12"/>
+													{{com.rating}}
+												</div>
                         <div class="comment-body">{{com.body}}</div>
                     </div>
                 </div>
