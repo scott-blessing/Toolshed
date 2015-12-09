@@ -145,15 +145,15 @@
 
 		$scope.toggleFavorite = function () {
 			if ($scope.curIsFavorite()) {
-				//$scope.favorites.splice($scope.favorites.indexOf($scope.curSelectedResult.title), 1);
 				UserService.favorites.splice(UserService.favorites.indexOf($scope.curSelectedResult.title), 1);
 			} else {
-				//$scope.favorites.push($scope.curSelectedResult.title);
 				UserService.favorites.push($scope.curSelectedResult.title);
 			}
 		};
 
-
+		$scope.submitGuide = function() {
+			$location.path('guide/' + $scope.curSelectedResult.title);
+		};
 
 
 		//////////////////////////////////

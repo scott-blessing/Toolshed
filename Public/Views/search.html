@@ -168,7 +168,7 @@ If the results list is empty, display a message instead indicating that no resul
                 <div id="toolMap" style="height:400px"></div>
                 <div class="info-panel-lab-list">
                     <!--TODO: Lab sorting DDL-->
-                    <table class="info-panel-lab-table">
+                    <!--<table class="info-panel-lab-table">
                         <thead>
                             <tr>
                                 <td>Location</td>
@@ -185,7 +185,7 @@ If the results list is empty, display a message instead indicating that no resul
                                 </td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table>-->
                 </div>
             </div>
             <div class="info-panel-container">
@@ -199,6 +199,7 @@ If the results list is empty, display a message instead indicating that no resul
                     </div>
                 </div>
 								<div class="guide-link"
+										 data-ng-if="loggedIn()"
 										 data-ng-click="submitGuide()">Submit a Guide</div>
             </div>
         </div>
@@ -223,7 +224,7 @@ If the results list is empty, display a message instead indicating that no resul
 							<div id="softMap" style="height:400px"></div>
                 <div class="info-panel-lab-list">
                     <!--TODO: Lab sorting DDL-->
-                    <table class="info-panel-lab-table">
+                    <!--<table class="info-panel-lab-table">
                         <thead>
                             <tr>
                                 <td>Location</td>
@@ -240,7 +241,7 @@ If the results list is empty, display a message instead indicating that no resul
                                 </td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table>-->
                 </div>
             </div>
             <div class="info-panel-container">
@@ -254,6 +255,7 @@ If the results list is empty, display a message instead indicating that no resul
                     </div>
                 </div>
 							<div class="guide-link"
+									 data-ng-if="loggedIn()"
 									 data-ng-click="submitGuide()">Submit a Guide</div>
             </div>
         </div> 
