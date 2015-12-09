@@ -1,2 +1,12 @@
-﻿body {
+﻿.inside {
+	padding-left: 15px;
+}
+
+h1 {
+    color: silver;
+    font-size: 40px;
+    font-family: bebas-neue, sans-serif;
+    font-weight: 300;
+    padding-left: 15px;
+
 }
