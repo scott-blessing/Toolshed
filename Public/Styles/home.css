@@ -64,5 +64,7 @@
     text-indent: 40px;
 }
 
-
+.clickable:hover {
+    cursor: pointer;
+}
 

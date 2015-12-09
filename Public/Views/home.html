@@ -20,7 +20,7 @@
 		<div class="popular-list">
 			<div class="popular-header">Popular Searches</div>
 			<ul>
-				<li class="popular-item"
+				<li class="popular-item clickable"
 						data-ng-repeat="p in popularSearches"
 						data-ng-click="searchFor(p)">
 					{{p}}
@@ -32,7 +32,7 @@
 				 data-ng-if="loggedIn()">
 			<div class="popular-header">Favorites</div>
 			<ul>
-				<li class="favorite-item"
+				<li class="favorite-item clickable"
 						data-ng-repeat="f in favorites"
 						data-ng-click="searchFor(f)">
 					{{f}}
@@ -41,22 +41,22 @@
 		</div>
 
 		<div class="buttonstrip">
-			<div class="searchButton"
+			<div class="searchButton clickable"
 					 data-ng-click="searchFor('labs')">
 				<img src="Images/lab.png" width="24" height="24" />
 				<div class="searchButtonText">All Labs</div>
 			</div>
-			<div class="searchButton"
+			<div class="searchButton clickable"
 					 data-ng-click="searchFor('tools')">
 				<img src="Images/tool.png" width="24" height="24" />
 				<div class="searchButtonText">All Tools</div>
 			</div>
-			<div class="searchButton"
+			<div class="searchButton clickable"
 					 data-ng-click="searchFor('software')">
 				<img src="Images/software.png" width="24" height="24" />
 				<div class="searchButtonText">All Software</div>
 			</div>
-			<div class="searchButton"
+			<div class="searchButton clickable"
 					 data-ng-click="searchFor('guides')">
 				<img src="Images/guide.png" width="24" height="24" />
 				<div class="searchButtonText">All Guides</div>
