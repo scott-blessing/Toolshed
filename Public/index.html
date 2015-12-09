@@ -27,8 +27,12 @@
                 font-style: normal;
             }
         </style>
+
         <script src="Scripts/homeCtrl.js"></script>
         <script src="Scripts/searchCtrl.js"></script>
+				<script src="Scripts/reportCtrl.js"></script>
+				<script src="Scripts/guideCtrl.js"></script>
+
         <link href="Styles/hover-min.css" rel="stylesheet">
         <link href="Styles/index.css" rel="stylesheet" />
 
@@ -38,8 +42,9 @@
 
             <!--Header-->
             <div id="header" data-ng-controller="HeaderCtrl">
-                <div class="logo" data-ng-click="returnHome()">
-                    <div class="large-text">Toolshed</div>
+                <div class="logo">
+									<div class="large-text"
+											 data-ng-click="returnHome()">Toolshed</div>
                     <div data-ng-show="loggedIn()"
                          class="right">
                         <a data-ng-click="reportIssue()">Report Issue</a>

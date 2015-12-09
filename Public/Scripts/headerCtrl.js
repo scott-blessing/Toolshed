@@ -24,7 +24,7 @@
 	};
 
 	$scope.reportIssue = function () {
-		$location.path('report');
+		$location.path('report/');
 	};
 
 	$scope.returnHome = function () {

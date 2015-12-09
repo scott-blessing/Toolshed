@@ -3,7 +3,16 @@
 <div>
 	<h1>Report an Issue</h1>
 
-	<form>
-
-	</form>
+	<div data-ng-if="!submitted">
+		<p class="report-paragraph">If you have discovered an issue with the site or discovered missing, incorrect, or otherwise faulty data, please let the Admins know.  All input is greatly appreciated.  Please enter your issue into the form below.</p>
+		<form>
+			<textarea></textarea>
+			<button data-ng-click="submit()">Submit</button>
+		</form>
+	</div>
+	<div data-ng-if="submitted">
+		<p class="report-paragraph">Thank you for your feedback!  Click this link to return to browsing Toolshed.</p>
+		<button data-ng-click="returnHome()">Return to Toolshed</button>
+	</div>
+	
 </div>
