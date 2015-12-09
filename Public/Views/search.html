@@ -38,43 +38,43 @@ If the results list is empty, display a message instead indicating that no resul
                     </div>
                 </div>
                 <div class="result-list-tools">
-									<div class="result-list-item result-list-tool-item clickable"
-											 data-ng-repeat="r in results_tools"
-											 data-ng-click="select(r)">
-										<img src="Images/tool.png" width="24" height="24" />
-										<div class="result-list-item-title"
-												 data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
-									</div>
+                    <div class="result-list-item result-list-tool-item clickable"
+                         data-ng-repeat="r in results_tools"
+                         data-ng-click="select(r)">
+                        <img src="Images/tool.png" width="24" height="24" />
+                        <div class="result-list-item-title"
+                             data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
+                    </div>
                 </div>
                 <div class="result-list-software">
-									<div class="result-list-item result-list-software-item clickable"
-											 data-ng-repeat="r in results_software"
-											 data-ng-click="select(r)">
-										<img src="Images/software.png" width="24" height="24" />
-										<div class="result-list-item-title"
-												 data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
-									</div>
+                    <div class="result-list-item result-list-software-item clickable"
+                         data-ng-repeat="r in results_software"
+                         data-ng-click="select(r)">
+                        <img src="Images/software.png" width="24" height="24" />
+                        <div class="result-list-item-title"
+                             data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
+                    </div>
                 </div>
                 <div class="result-list-guides">
-									<div class="result-list-item result-list-guide-item clickable"
-											 data-ng-repeat="r in results_guides"
-											 data-ng-click="select(r)">
-										<img src="Images/guide.png" width="24" height="24" />
-										<div class="result-list-item-title"
-												 data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
-									</div>
-								</div>
+                    <div class="result-list-item result-list-guide-item clickable"
+                         data-ng-repeat="r in results_guides"
+                         data-ng-click="select(r)">
+                        <img src="Images/guide.png" width="24" height="24" />
+                        <div class="result-list-item-title"
+                             data-ng-class="{'selected': curSelectedResult === r}">{{r.title}}</div>
+                    </div>
+                </div>
             </ul>
         </div>
 
         <div class="popular-list">
             <div class="popular-header">Popular Searches</div>
             <ul>
-							<li class="popular-item clickable"
-									data-ng-repeat="p in popularSearches"
-									data-ng-click="searchFor(p)">
-								{{p}}
-							</li>
+                <li class="popular-item clickable"
+                    data-ng-repeat="p in popularSearches"
+                    data-ng-click="searchFor(p)">
+                    {{p}}
+                </li>
             </ul>
         </div>
 
@@ -82,11 +82,11 @@ If the results list is empty, display a message instead indicating that no resul
              data-ng-if="loggedIn()">
             <div class="popular-header">Favorites</div>
             <ul>
-							<li class="favorite-item clickable"
-									data-ng-repeat="f in favorites"
-									data-ng-click="searchFor(f)">
-								{{f}}
-							</li>
+                <li class="favorite-item clickable"
+                    data-ng-repeat="f in favorites"
+                    data-ng-click="searchFor(f)">
+                    {{f}}
+                </li>
             </ul>
         </div>
 
@@ -101,14 +101,14 @@ If the results list is empty, display a message instead indicating that no resul
             <div class="info-panel-header">
                 <img src="Images/lab.png" width="24" height="24" />
                 <div class="info-panel-title">{{curSelectedResult.title}}</div>
-							<div class="star clickable"
-									 data-ng-if="loggedIn()"
-									 data-ng-click="toggleFavorite()">
-								<img src="Images/star_full.png" width="24" height="24"
-										 data-ng-if="curIsFavorite()" />
-								<img src="Images/star_hollow.png" width="24" height="24"
-										 data-ng-if="!curIsFavorite()" />
-							</div>
+                <div class="star clickable"
+                     data-ng-if="loggedIn()"
+                     data-ng-click="toggleFavorite()">
+                    <img src="Images/star_full.png" width="24" height="24"
+                         data-ng-if="curIsFavorite()" />
+                    <img src="Images/star_hollow.png" width="24" height="24"
+                         data-ng-if="!curIsFavorite()" />
+                </div>
             </div>
             <div class="info-panel-container">
                 <div class="info-panel-map">
@@ -130,11 +130,11 @@ If the results list is empty, display a message instead indicating that no resul
             </div>
             <div class="info-panel-container">
                 <div class="info-panel-subtitle">Tools and Software</div>
-							<div class="info-panel-tool-entry clickable"
-									 data-ng-repeat="toolName in curSelectedResult.tools"
-									 data-ng-click="searchFor(toolName)">
-								{{toolName}}
-							</div>
+                <div class="info-panel-tool-entry clickable"
+                     data-ng-repeat="toolName in curSelectedResult.tools"
+                     data-ng-click="searchFor(toolName)">
+                    {{toolName}}
+                </div>
             </div>
             <div class="info-panel-container">
                 <div class="info-panel-subtitle">Comments</div>
@@ -177,14 +177,14 @@ If the results list is empty, display a message instead indicating that no resul
             <div class="info-panel-header">
                 <img src="Images/tool.png" width="24" height="24" />
                 <div class="info-panel-title">{{curSelectedResult.title}}</div>
-							<div class="star clickable"
-									 data-ng-if="loggedIn()"
-									 data-ng-click="toggleFavorite()">
-								<img src="Images/star_full.png" width="24" height="24"
-										 data-ng-if="curIsFavorite()" />
-								<img src="Images/star_hollow.png" width="24" height="24"
-										 data-ng-if="!curIsFavorite()" />
-							</div>
+                <div class="star clickable"
+                     data-ng-if="loggedIn()"
+                     data-ng-click="toggleFavorite()">
+                    <img src="Images/star_full.png" width="24" height="24"
+                         data-ng-if="curIsFavorite()" />
+                    <img src="Images/star_hollow.png" width="24" height="24"
+                         data-ng-if="!curIsFavorite()" />
+                </div>
             </div>
             <div class="info-panel-desc">{{curSelectedResult.desc}}</div>
             <div class="info-panel-container">
@@ -201,9 +201,9 @@ If the results list is empty, display a message instead indicating that no resul
                         </thead>
                         <tbody>
                             <tr data-ng-repeat="loc in getSortedCurToolLocations(sortMethod)">
-															<td class="clickable" data-ng-click="searchFor(loc.title)">
-																{{loc.title}}
-															</td>
+                                <td class="clickable" data-ng-click="searchFor(loc.title)">
+                                    {{loc.title}}
+                                </td>
                                 <td>
                                     {{loc.sortValueText}}
                                 </td>
@@ -216,19 +216,19 @@ If the results list is empty, display a message instead indicating that no resul
                  data-ng-if="loggedIn() || curSelectedResult.guides.length > 0">
                 <div class="info-panel-subtitle">Guides</div>
                 <div class="info-panel-guide-list">
-									<div class="info-panel-guide-entry clickable"
-											 data-ng-repeat="g in curSelectedResult.guides"
-											 data-ng-click="searchFor(g)">
-										<div class="guide-title">{{g}}</div>
-										<div class="guide-rating">
-											<img src="Images/star_full.png" width="12" height="12" />
-											{{getGuideRatingText(g)}}
-										</div>
-									</div>
+                    <div class="info-panel-guide-entry clickable"
+                         data-ng-repeat="g in curSelectedResult.guides"
+                         data-ng-click="searchFor(g)">
+                        <div class="guide-title">{{g}}</div>
+                        <div class="guide-rating">
+                            <img src="Images/star_full.png" width="12" height="12" />
+                            {{getGuideRatingText(g)}}
+                        </div>
+                    </div>
                 </div>
-							<div class="guide-link clickable"
-									 data-ng-if="loggedIn()"
-									 data-ng-click="submitGuide()">Submit a Guide</div>
+                <div class="guide-link clickable"
+                     data-ng-if="loggedIn()"
+                     data-ng-click="submitGuide()">Submit a Guide</div>
             </div>
         </div>
 
@@ -238,14 +238,14 @@ If the results list is empty, display a message instead indicating that no resul
             <div class="info-panel-header">
                 <img src="Images/software.png" width="24" height="24" />
                 <div class="info-panel-title">{{curSelectedResult.title}}</div>
-							<div class="star clickable"
-									 data-ng-if="loggedIn()"
-									 data-ng-click="toggleFavorite()">
-								<img src="Images/star_full.png" width="24" height="24"
-										 data-ng-if="curIsFavorite()" />
-								<img src="Images/star_hollow.png" width="24" height="24"
-										 data-ng-if="!curIsFavorite()" />
-							</div>
+                <div class="star clickable"
+                     data-ng-if="loggedIn()"
+                     data-ng-click="toggleFavorite()">
+                    <img src="Images/star_full.png" width="24" height="24"
+                         data-ng-if="curIsFavorite()" />
+                    <img src="Images/star_hollow.png" width="24" height="24"
+                         data-ng-if="!curIsFavorite()" />
+                </div>
             </div>
             <div class="info-panel-desc">{{curSelectedResult.desc}}</div>
             <div class="info-panel-container">
@@ -261,14 +261,14 @@ If the results list is empty, display a message instead indicating that no resul
                             </tr>
                         </thead>
                         <tbody>
-													<tr data-ng-repeat="loc in getSortedCurToolLocations(sortMethod)">
-														<td class="clickable" data-ng-click="searchFor(loc.title)">
-															{{loc.title}}
-														</td>
-														<td>
-															{{loc.sortValueText}}
-														</td>
-													</tr>
+                            <tr data-ng-repeat="loc in getSortedCurToolLocations(sortMethod)">
+                                <td class="clickable" data-ng-click="searchFor(loc.title)">
+                                    {{loc.title}}
+                                </td>
+                                <td>
+                                    {{loc.sortValueText}}
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -277,19 +277,19 @@ If the results list is empty, display a message instead indicating that no resul
                  data-ng-if="loggedIn() || curSelectedResult.guides.length > 0">
                 <div class="info-panel-subtitle">Guides</div>
                 <div class="info-panel-guide-list">
-									<div class="info-panel-guide-entry clickable"
-											 data-ng-repeat="g in curSelectedResult.guides"
-											 data-ng-click="searchFor(g)">
-										<div class="guide-title">{{g}}</div>
-										<div class="guide-rating">
-											<img src="Images/star_full.png" width="12" height="12" />
-											{{getGuideRatingText(g)}}
-										</div>
-									</div>
+                    <div class="info-panel-guide-entry clickable"
+                         data-ng-repeat="g in curSelectedResult.guides"
+                         data-ng-click="searchFor(g)">
+                        <div class="guide-title">{{g}}</div>
+                        <div class="guide-rating">
+                            <img src="Images/star_full.png" width="12" height="12" />
+                            {{getGuideRatingText(g)}}
+                        </div>
+                    </div>
                 </div>
-							<div class="guide-link clickable"
-									 data-ng-if="loggedIn()"
-									 data-ng-click="submitGuide()">Submit a Guide</div>
+                <div class="guide-link clickable"
+                     data-ng-if="loggedIn()"
+                     data-ng-click="submitGuide()">Submit a Guide</div>
             </div>
         </div> 
 
@@ -300,18 +300,18 @@ If the results list is empty, display a message instead indicating that no resul
             <div class="info-panel-header">
                 <img src="Images/guide.png" width="24" height="24" />
                 <div class="info-panel-title">{{curSelectedResult.title}}</div>
-							<div class="star clickable"
-									 data-ng-if="loggedIn()"
-									 data-ng-click="toggleFavorite()">
-								<img src="Images/star_full.png" width="24" height="24"
-										 data-ng-if="curIsFavorite()" />
-								<img src="Images/star_hollow.png" width="24" height="24"
-										 data-ng-if="!curIsFavorite()" />
-							</div>
+                <div class="star clickable"
+                     data-ng-if="loggedIn()"
+                     data-ng-click="toggleFavorite()">
+                    <img src="Images/star_full.png" width="24" height="24"
+                         data-ng-if="curIsFavorite()" />
+                    <img src="Images/star_hollow.png" width="24" height="24"
+                         data-ng-if="!curIsFavorite()" />
+                </div>
             </div>
             <div class="info-panel-desc">Submitted by {{curSelectedResult.submitUser}} on {{curSelectedResult.submitDate.toDateString()}}</div>
-					<div class="info-panel-guide-text clickable"
-							 data-ng-click="searchFor(curSelectedResult.tool)">Guide for: {{curSelectedResult.tool}}</div>
+            <div class="info-panel-guide-text clickable"
+                 data-ng-click="searchFor(curSelectedResult.tool)">Guide for: {{curSelectedResult.tool}}</div>
             <div class="info-panel-rating">
                 <img src="Images/star_full.png" width="12" height="12" />
                 {{getRatingText(curSelectedResult)}}
@@ -339,7 +339,9 @@ If the results list is empty, display a message instead indicating that no resul
                             <img data-ng-src="Images/star_{{commentForm.rating >= 5 ? 'full' : 'hollow'}}.png" width="12" height="12"
                                  data-ng-click="commentForm.rating = 5" />
                         </div>
-                        <button data-ng-click="submitComment()">Submit</button>
+                        <div id="SubmitButtom">
+                            <class data-ng-click="submitComment()">Submit</button>
+                        </div>
                     </form>
                 </div>
                 <div class="info-panel-comment-list">
