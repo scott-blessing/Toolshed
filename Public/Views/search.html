@@ -292,6 +292,9 @@ If the results list is empty, display a message instead indicating that no resul
             </div>
         </div> 
 
-				<div data-ng-if="curSelectedResult === null">Looks like you somehow got no results for your search</div>
+				<div class="info-panel" 
+						 data-ng-if="curSelectedResult === null">
+					<div class="info-panel-desc">Select a result from the list to learn more about it</div>
+				</div>
     </div>
 </div>

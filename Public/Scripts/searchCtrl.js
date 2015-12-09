@@ -32,7 +32,7 @@
 				}, function (results, status) {
 					if (status == google.maps.GeocoderStatus.OK) {
 						var myOptions = {
-							zoom: 14,
+							zoom: 15,
 							center: results[0].geometry.location
 						}
 						map = new google.maps.Map(document.getElementById("labMap"), myOptions);
@@ -117,6 +117,7 @@
 		$scope.results_guides = DataService.guides;
 		//TODO: Filter on search input
 
+		$scope.curSelectedResult = null;
 
 		if ($scope.searchInput === "labs") {
 			$scope.results_tools = [];
@@ -139,16 +140,22 @@
 			$scope.results_software = [];
 		}
 
-		if ($scope.results_labs.length > 0)
-			$scope.select($scope.results_labs[0]);
-		else if ($scope.results_tools.length > 0)
-			$scope.select($scope.results_tools[0]);
-		else if ($scope.results_software.length > 0)
-			$scope.select($scope.results_software[0]);
-		else if ($scope.results_guides.length > 0)
-			$scope.select($scope.results_guides[0]);
-		else
-			$scope.select = null;
+		for (var i = 0; i < $scope.results_labs.length; i++) {
+			if ($scope.searchInput === $scope.results_labs[i].title)
+				$scope.select($scope.results_labs[i]);
+		}
+		for (var i = 0; i < $scope.results_tools.length; i++) {
+			if ($scope.searchInput === $scope.results_tools[i].title)
+				$scope.select($scope.results_tools[i]);
+		}
+		for (var i = 0; i < $scope.results_software.length; i++) {
+			if ($scope.searchInput === $scope.results_software[i].title)
+				$scope.select($scope.results_software[i]);
+		}
+		for (var i = 0; i < $scope.results_guides.length; i++) {
+			if ($scope.searchInput === $scope.results_guides[i].title)
+				$scope.select($scope.results_guides[i]);
+		}
 
 
 

@@ -190,7 +190,7 @@
 			GUIDE: 'guide'
 		};
 
-		factory.popular = ['3D Printer', 'Siebel Center', 'Fab Lab'];
+		factory.popular = ['3D Printer', 'Siebel Center', 'Fab Labs'];
 
 		function itemInArray(item, arr) {
 			for (var i = 0; i < arr.length; i++) {
