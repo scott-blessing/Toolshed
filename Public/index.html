@@ -47,8 +47,10 @@
 											 data-ng-click="returnHome()">Toolshed</div>
                     <div data-ng-show="loggedIn()"
                          class="right">
-                        <a data-ng-click="reportIssue()">Report Issue</a>
-                        <a>{{username}}</a>
+                        <div style="float:left;">
+                            <a data-ng-click="reportIssue()" class="user-report">Report Issue</a>
+                            <a class="user-report">{{username}}</a>
+                        </div>
                         <div id="login" class="right">
                             <a data-ng-click="logout()">Logout</a>
                         </div>

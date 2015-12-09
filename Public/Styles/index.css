@@ -28,6 +28,13 @@ body {
     left: 20px;
     top: 15px;
 }
+.user-report {
+    font-family: bebas-neue, sans-serif; 
+    font-size:17px; 
+    color: silver;
+    padding-top: 5px;
+    padding-left: 5px;
+}
 
 #login {
     width: 145px;
