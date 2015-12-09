@@ -85,4 +85,23 @@
 			}];
 		};
 
+		$scope.curIsFavorite = function () {
+			var isFav = false;
+			for (i = 0; i < $scope.favorites.length; i++) {
+				if ($scope.favorites[i] === $scope.curSelectedResult.title)
+					isFav = true;
+			}
+			return isFav;
+		};
+
+		$scope.toggleFavorite = function () {
+			if ($scope.curIsFavorite()) {
+				$scope.favorites.splice($scope.favorites.indexOf($scope.curSelectedResult.title), 1);
+				UserService.favorites.splice(UserService.favorites.indexOf($scope.curSelectedResult.title), 1);
+			} else {
+				$scope.favorites.push($scope.curSelectedResult.title);
+				UserService.favorites.push($scope.curSelectedResult.title);
+			}
+		};
+
 	}]);

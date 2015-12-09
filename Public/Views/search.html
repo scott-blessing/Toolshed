@@ -32,6 +32,7 @@ If the results list is empty, display a message instead indicating that no resul
                     <div class="result-list-lab-item"
                          data-ng-repeat="r in results_labs"
                          data-ng-click="select(r)">
+												<img src="Images/lab.png" width="24" height="24"/>
                         <div class="result-list-item-title">{{r.title}}</div>
                     </div>
                 </div>
@@ -39,6 +40,7 @@ If the results list is empty, display a message instead indicating that no resul
                     <div class="result-list-tool-item"
                          data-ng-repeat="r in results_tools"
                          data-ng-click="select(r)">
+												<img src="Images/tool.png" width="24" height="24" />
                         <div class="result-list-item-title">{{r.title}}</div>
                     </div>
                 </div>
@@ -46,6 +48,7 @@ If the results list is empty, display a message instead indicating that no resul
                     <div class="result-list-software-item"
                          data-ng-repeat="r in results_software"
                          data-ng-click="select(r)">
+												<img src="Images/software.png" width="24" height="24" />
                         <div class="result-list-item-title">{{r.title}}</div>
                     </div>
                 </div>
@@ -53,6 +56,7 @@ If the results list is empty, display a message instead indicating that no resul
                     <div class="result-list-lab-item"
                          data-ng-repeat="r in results_guides"
                          data-ng-click="select(r)">
+												<img src="Images/guide.png" width="24" height="24" />
                         <div class="result-list-item-title">{{r.title}}</div>
                     </div>
                 </div>
@@ -91,13 +95,21 @@ If the results list is empty, display a message instead indicating that no resul
         <div class="info-panel info-panel-lab"
              data-ng-if="resultType(curSelectedResult) === types.LAB">
             <div class="info-panel-header">
-                <!--TODO: Lab icon-->
+								<img src="Images/lab.png" width="24" height="24" />
                 <div class="info-panel-title">{{curSelectedResult.title}}</div>
-                <!--TODO: Favorite toggle star-->
+								<div class="star"
+										 data-ng-if="loggedIn()"
+										 data-ng-click="toggleFavorite()">
+									<img src="Images/star_hollow.png" width="24" height="24"
+											 data-ng-if="curIsFavorite()" />
+									<img src="Images/star_full.png" width="24" height="24"
+											 data-ng-if="!curIsFavorite()" />
+								</div>
             </div>
             <div class="info-panel-container">
-                <!--TODO: Implement Google Map-->
-                <div class="info-panel-map"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12203.756918782326!2d-88.2169016!3d40.12135775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1449545834376" width="900" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+                <div class="info-panel-map">
+									<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12203.756918782326!2d-88.2169016!3d40.12135775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1449545834376" width="900" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+								</div>
             </div>
             <div class="info-panel-desc">{{curSelectedResult.location}}</div>
 
@@ -136,9 +148,16 @@ If the results list is empty, display a message instead indicating that no resul
         <div class="info-panel info-panel-tool"
              data-ng-if="resultType(curSelectedResult) === types.TOOL">
             <div class="info-panel-header">
-                <!--TODO: Tool icon-->
+								<img src="Images/tool.png" width="24" height="24" />
                 <div class="info-panel-title">{{curSelectedResult.title}}</div>
-                <!--TODO: Favorite toggle star-->
+								<div class="star"
+										 data-ng-if="loggedIn()"
+										 data-ng-click="toggleFavorite()">
+									<img src="Images/star_hollow.png" width="24" height="24"
+											 data-ng-if="curIsFavorite()" />
+									<img src="Images/star_full.png" width="24" height="24"
+											 data-ng-if="!curIsFavorite()" />
+								</div>
             </div>
             <div class="info-panel-desc">{{curSelectedResult.desc}}</div>
             <div class="info-panel-container">
@@ -182,9 +201,16 @@ If the results list is empty, display a message instead indicating that no resul
         <div class="info-panel info-panel-software"
              data-ng-if="resultType(curSelectedResult) === types.SOFTWARE">
             <div class="info-panel-header">
-                <!--TODO: Software icon-->
+								<img src="Images/software.png" width="24" height="24" />
                 <div class="info-panel-title">{{curSelectedResult.title}}</div>
-                <!--TODO: Favorite toggle star-->
+								<div class="star"
+										 data-ng-if="loggedIn()"
+										 data-ng-click="toggleFavorite()">
+									<img src="Images/star_hollow.png" width="24" height="24"
+											 data-ng-if="curIsFavorite()" />
+									<img src="Images/star_full.png" width="24" height="24"
+											 data-ng-if="!curIsFavorite()" />
+								</div>
             </div>
             <div class="info-panel-desc">{{curSelectedResult.desc}}</div>
             <div class="info-panel-container">
@@ -229,9 +255,16 @@ If the results list is empty, display a message instead indicating that no resul
         <div class="info-panel info-panel-guide"
              data-ng-if="resultType(curSelectedResult) === types.GUIDE">
             <div class="info-panel-header">
-                <!--TODO: Guide icon-->
+								<img src="Images/guide.png" width="24" height="24" />
                 <div class="info-panel-title">{{curSelectedResult.title}}</div>
-                <!--TODO: Favorite toggle star-->
+                <div class="star"
+										 data-ng-if="loggedIn()"
+										 data-ng-click="toggleFavorite()">
+									<img src="Images/star_hollow.png" width="24" height="24" 
+											 data-ng-if="curIsFavorite()"/>
+									<img src="Images/star_full.png" width="24" height="24"
+											 data-ng-if="!curIsFavorite()" />
+								</div>
             </div>
             <div class="info-panel-desc">Submitted by {{curSelectedResult.submitUser}} on {{curSelectedResult.submitDate.toDateString()}}</div>
             <div class="info-panel-guide-link-container">
