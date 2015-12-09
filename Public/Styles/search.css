@@ -72,21 +72,47 @@ body {
 
 .result-list-lab-item
 {
-
+    display: inline-block;
     padding-top: 5px;
+    padding-right: 100px;
+    white-space: nowrap;
     /*border: 1px solid #686868;*/
-
 }
+.result-list-lab-item img
+{
+    float:left;
+    display: block;
+    margin-right: 10px;
+}
+
 .result-list-tool-item
 {    padding-top: 5px;
+    display: inline-block;
+    padding-right: 130px;
+    white-space: nowrap;
     /*border: 1px solid #686868;*/
+}
 
+.result-list-tool-item img
+{
+    float:left;
+    display: block;
+    margin-right: 10px;
 }
 .result-list-software-item
 {
     /*border: 1px solid #686868;*/
-
+    white-space: nowrap;
+    display: inline-block;
+    padding-right: 130px;
     padding-top: 5px;
+}
+
+.result-list-software-item img
+{
+    float:left;
+    display: block;
+    margin-right: 10px;
 }
 
 .selected {
